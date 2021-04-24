@@ -1,0 +1,8 @@
+{
+    "env": {
+        "PORT": 8080,
+        "MONGO_USER": "tfgupv2021",
+        "MONGO_PASSWORD": "B8TegY24IvYNiNcR",
+        "MONGO_DEFAULT_DATABASE": "PasswordGeneratorDatabase"
+    }
+}

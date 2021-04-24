@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+        link(rel="stylesheet", href="/css/main.css")
+        block styles
+
+    body
+        div.backdrop
+        header.main-header
+            button(id="side-menu-toggle") #{navNames.names.menuName}
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.names.indexName}
+                    if isAuthenticated
+                        li.main-header__item
+                            a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.names.menuName}
+                        li.main-header__item
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.generatorName}
+                        li.main-header__item
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.savedName}        
+                ul.main-header__item-list
+                    if !isAuthenticated 
+                        li.main-header__item
+                            a(href="/login", class=(path === '/login') ? 'active' : '') #{navNames.names.loginName} 
+                        li.main-header__item
+                            a(href="/signup", class=(path === '/signup') ? 'active' : '') #{navNames.names.signupName} 
+                    else
+                        li.main-header__item
+                            a(href="/account", class=(path === '/account') ? 'active' : '') #{navNames.names.accountName}                         
+                        li.main-header__item 
+                            form(action="/logout", method="POST") 
+                                input(type="hidden", name="_csrf", value=csrfToken) 
+                                button(type="submit") #{navNames.names.logoutName} 
+            nav.mobile-nav
+                ul.mobile-nav__item-list
+                    li.mobile-nav__item
+                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.names.indexName}
+                    if isAuthenticated
+                        li.mobile-nav__item
+                            a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.names.menuName}
+                        li.mobile-nav__item
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.generatorName}
+                        li.mobile-nav__item
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.savedName}        
+                ul.mobile-nav__item-list
+                    if !isAuthenticated 
+                        li.mobile-nav__item
+                            a(href="/login", class=(path === '/login') ? 'active' : '') #{navNames.names.loginName} 
+                        li.mobile-nav__item
+                            a(href="/signup", class=(path === '/signup') ? 'active' : '') #{navNames.names.signupName} 
+                    else
+                        li.mobile-nav__item
+                            a(href="/account", class=(path === '/account') ? 'active' : '') #{navNames.names.accountName}                         
+                        li.mobile-nav__item 
+                            form(action="/logout", method="POST") 
+                                input(type="hidden", name="_csrf", value=csrfToken) 
+                                button(type="submit") #{navNames.names.logoutName}
+        block content
+        script(src="/js/main.js")
+        block scripts

@@ -1,0 +1,28 @@
+{
+    "nav": {
+        "names": {
+            "indexName": "Home",
+            "menuName": "Menu",
+            "generatorName": "Password generator",
+            "savedName": "Saved passwords",
+            "accountName": "My account",
+            "loginName": "Login",
+            "signupName": "Signup",
+            "logoutName": "Logout"
+        }
+    },
+    "pageTitles": {
+        "indexTitle": "Home",
+        "menuTitle": "Menu",
+        "accountTitle": "My Account",
+        "generatorTitle": "Generator",
+        "savedTitle": "Passwords",
+        "loginTitle": "Login",
+        "signupTitle": "Signup",
+        "errorsTitle": {
+            "403": "403",
+            "404": "404",
+            "500": "500"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "nav": {
+        "names": {
+            "indexName": "Inicio",
+            "menuName": "Menú",
+            "generatorName": "Generador de contraseñas",
+            "savedName": "Contraseñas guardadas",
+            "accountName": "Mi cuenta",
+            "loginName": "Conectarse",
+            "signupName": "Registrarse",
+            "logoutName": "Desconectarse"
+        }
+    },
+    "pageTitles": {
+        "indexTitle": "Inicio",
+        "menuTitle": "Menú",
+        "accountTitle": "Mi Cuenta",
+        "generatorTitle": "Generador",
+        "savedTitle": "Contraseñas",
+        "loginTitle": "Conectarse",
+        "signupTitle": "Registrarse",
+        "errorsTitle": {
+            "403": "403",
+            "404": "404",
+            "500": "500"
+        }
+    }
+}
