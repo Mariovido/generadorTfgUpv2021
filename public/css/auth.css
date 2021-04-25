@@ -1,0 +1,17 @@
+.login-form {
+    width: 25rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.signup-form {
+    width: 25rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+#resetPass {
+    margin: 1rem;
+}
