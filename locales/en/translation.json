@@ -1,28 +1,75 @@
 {
     "nav": {
-        "names": {
-            "indexName": "Home",
-            "menuName": "Menu",
-            "generatorName": "Password generator",
-            "savedName": "Saved passwords",
-            "accountName": "My account",
-            "loginName": "Login",
-            "signupName": "Signup",
-            "logoutName": "Logout"
+        "auth": {
+            "names": {
+                "menu": "Menu",
+                "generator": "Password generator",
+                "saved": "Saved passwords",
+                "account": "My account",
+                "logout": "Logout"
+            }
+        },
+        "notAuth": {
+            "names": {
+                "login": "Login",
+                "signup": "Signup"
+            }
+        },
+        "both": {
+            "names": {
+                "index": "Home",
+                "nav": "Menu"
+            }
         }
     },
     "pageTitles": {
-        "indexTitle": "Home",
-        "menuTitle": "Menu",
-        "accountTitle": "My Account",
+        "accountTitles": {
+            "account": "My Account"
+        },
+        "authTitles": {
+            "login": "Login",
+            "signup": "Signup"
+        },
+        "menusTitles": {
+            "index": "Home",
+            "menu": "Menu"
+        },
         "generatorTitle": "Generator",
         "savedTitle": "Passwords",
-        "loginTitle": "Login",
-        "signupTitle": "Signup",
         "errorsTitle": {
             "403": "403",
             "404": "404",
             "500": "500"
+        }
+    },
+    "loginView": {
+        "form": {
+            "email": "E-mail",
+            "pass": "Password",
+            "login": "Login"
+        },
+        "resetPass": "Have you forgotten your password?",
+        "validationErrors": {
+            "email": "Please enter a valid email address",
+            "pass": "Password has to be valid",
+            "emailNotFound": "There is no account with this email"
+        }
+    },
+    "signupView": {
+        "form": {
+            "email": "E-mail",
+            "alias": "Alias",
+            "pass": "Password",
+            "confirmPass": "Confirm password",
+            "signup": "Signup"
+        },
+        "validationErrors": {
+            "email": "Please enter a valid email",
+            "emailExists": "An account with this email already exists",
+            "alias": "Enter an alias that only contains numbers and letters",
+            "aliasLength": "The alias must have a minimum of 4 characters and a maximum of 12 characters",
+            "pass": "Enter a password with at least one number, one special character and a length of 8 characters",
+            "confirmPass": "Passwords have to match"
         }
     }
 }

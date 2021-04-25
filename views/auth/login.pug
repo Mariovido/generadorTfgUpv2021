@@ -1,9 +1,23 @@
 extends ../layouts/main-layout.pug
 
 block styles 
-    // link(rel="stylesheet", href="/css/product.css")
+    link(rel="stylesheet", href="/css/forms.css")
+    link(rel="stylesheet", href="/css/auth.css")
 
 block content 
     main
-        div Estoy en conectarse.
+        if errorMessage 
+            div.user-message.user-message--error #{errorMessage}
+        form.login-form(action="/login", method="POST")
+            .form-control 
+                label(for="email") #{loginNames.form.email}
+                input(class=validationErrors.find(e => e.param === 'email') ? 'invalid' : '', type="text", name="email", value=oldInput.email)#email
+            .form-control 
+                label(for="password") #{loginNames.form.pass}
+                input(class=validationErrors.find(e => e.param === 'password') ? 'invalid' : '', type="password", name="password", value=oldInput.password)#password
+            input(type="hidden", name="_csrf", value=csrfToken)
+            button.btn(type="submit") #{loginNames.form.login}
+        form
+            div.centered
+                a.btn(href="/reset-password")#resetPass #{loginNames.resetPass}
 block scripts 

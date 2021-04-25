@@ -1,9 +1,26 @@
 extends ../layouts/main-layout.pug
 
 block styles 
-    // link(rel="stylesheet", href="/css/product.css")
+    link(rel="stylesheet", href="/css/forms.css")
+    link(rel="stylesheet", href="/css/auth.css")
 
 block content 
     main
-        div Estoy en el registro
+        if errorMessage 
+            div.user-message.user-message--error #{errorMessage}
+        form.signup-form(action="/signup", method="POST")
+            .form-control
+                label(for="email") #{signupNames.form.email}
+                input(class=validationErrors.find(e => e.param === 'email') ? 'invalid' : '', type="text", name="email", value=oldInput.email)#email
+            .form-control 
+                label(for="alias") #{signupNames.form.alias}
+                input(class=validationErrors.find(e => e.param === 'alias') ? 'invalid' : '', type="text", name="alias", value=oldInput.alias)#alias
+            .form-control
+                label(for="password") #{signupNames.form.pass}
+                input(class=validationErrors.find(e => e.param === 'password') ? 'invalid' : '', type="password", name="password", value=oldInput.password)#password
+            .form-control 
+                label(for="confirmPassword") #{signupNames.form.confirmPass}
+                input(class=validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '', type="password", name="confirmPassword", value=oldInput.confirmPassword)#confirmPassword
+            input(type="hidden", name="_csrf", value=csrfToken)
+            button.btn(type="submit") #{signupNames.form.signup}
 block scripts 

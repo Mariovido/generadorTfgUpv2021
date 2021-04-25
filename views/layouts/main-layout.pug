@@ -11,55 +11,55 @@ html(lang="en")
     body
         div.backdrop
         header.main-header
-            button(id="side-menu-toggle") #{navNames.names.menuName}
+            button(id="side-menu-toggle") #{navNames.both.names.nav}
             nav.main-header__nav
                 ul.main-header__item-list
                     li.main-header__item
-                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.names.indexName}
+                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.both.names.index}
                     if isAuthenticated
                         li.main-header__item
-                            a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.names.menuName}
+                            a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.auth.names.menu}
                         li.main-header__item
-                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.generatorName}
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.auth.names.generator}
                         li.main-header__item
-                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.savedName}        
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.auth.names.saved}        
                 ul.main-header__item-list
                     if !isAuthenticated 
                         li.main-header__item
-                            a(href="/login", class=(path === '/login') ? 'active' : '') #{navNames.names.loginName} 
+                            a(href="/login", class=(path === '/login') ? 'active' : '') #{navNames.notAuth.names.login} 
                         li.main-header__item
-                            a(href="/signup", class=(path === '/signup') ? 'active' : '') #{navNames.names.signupName} 
+                            a(href="/signup", class=(path === '/signup') ? 'active' : '') #{navNames.notAuth.names.signup} 
                     else
                         li.main-header__item
-                            a(href="/account", class=(path === '/account') ? 'active' : '') #{navNames.names.accountName}                         
+                            a(href="/account", class=(path === '/account') ? 'active' : '') #{navNames.auth.names.account}                         
                         li.main-header__item 
                             form(action="/logout", method="POST") 
                                 input(type="hidden", name="_csrf", value=csrfToken) 
-                                button(type="submit") #{navNames.names.logoutName} 
+                                button(type="submit") #{navNames.auth.names.logout} 
             nav.mobile-nav
                 ul.mobile-nav__item-list
                     li.mobile-nav__item
-                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.names.indexName}
+                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.both.names.index}
                     if isAuthenticated
                         li.mobile-nav__item
-                            a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.names.menuName}
+                            a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.auth.names.menu}
                         li.mobile-nav__item
-                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.generatorName}
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.auth.names.generator}
                         li.mobile-nav__item
-                            a(href="", class=(path === '') ? 'active' : '') #{navNames.names.savedName}        
+                            a(href="", class=(path === '') ? 'active' : '') #{navNames.auth.names.saved}        
                 ul.mobile-nav__item-list
                     if !isAuthenticated 
                         li.mobile-nav__item
-                            a(href="/login", class=(path === '/login') ? 'active' : '') #{navNames.names.loginName} 
+                            a(href="/login", class=(path === '/login') ? 'active' : '') #{navNames.notAuth.names.login} 
                         li.mobile-nav__item
-                            a(href="/signup", class=(path === '/signup') ? 'active' : '') #{navNames.names.signupName} 
+                            a(href="/signup", class=(path === '/signup') ? 'active' : '') #{navNames.notAuth.names.signup} 
                     else
                         li.mobile-nav__item
-                            a(href="/account", class=(path === '/account') ? 'active' : '') #{navNames.names.accountName}                         
+                            a(href="/account", class=(path === '/account') ? 'active' : '') #{navNames.auth.names.account}                         
                         li.mobile-nav__item 
                             form(action="/logout", method="POST") 
                                 input(type="hidden", name="_csrf", value=csrfToken) 
-                                button(type="submit") #{navNames.names.logoutName}
+                                button(type="submit") #{navNames.auth.names.logout}
         block content
         script(src="/js/main.js")
         block scripts

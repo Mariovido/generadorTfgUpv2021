@@ -10,7 +10,7 @@
 exports.getAccount = (req, res, next) => {
     res.render('account/account', {
         path: '/account',
-        pageTitle: req.t('pageTitles.accountTitle'),
+        pageTitle: req.t('pageTitles.accountTitles.account'),
         navNames: req.t('nav')
     });
 };

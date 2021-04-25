@@ -12,6 +12,7 @@ const i18nextMiddleware = require('i18next-http-middleware');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
+const flash = require('connect-flash');
 // const morgan = require('morgan');
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
@@ -85,6 +86,9 @@ app.use(async (req, res, next) => {
         errorThrow(err, 500, next);
     }
 });
+
+// ERROR MESSAGES
+app.use(flash());
 
 // SECURITY, OPTIMIZATION & LOGS
 app.use(helmet());

@@ -6,11 +6,6 @@ const Schema = mongoose.Schema;
 
 // SCHEMA
 const userInfoSchema = new Schema({
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
     userAlias: {
         type: String,
         required: true

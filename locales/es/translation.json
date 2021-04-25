@@ -1,28 +1,75 @@
 {
     "nav": {
-        "names": {
-            "indexName": "Inicio",
-            "menuName": "Menú",
-            "generatorName": "Generador de contraseñas",
-            "savedName": "Contraseñas guardadas",
-            "accountName": "Mi cuenta",
-            "loginName": "Conectarse",
-            "signupName": "Registrarse",
-            "logoutName": "Desconectarse"
+        "auth": {
+            "names": {
+                "menu": "Menú",
+                "generator": "Generador de contraseñas",
+                "saved": "Contraseñas guardadas",
+                "account": "Mi cuenta",
+                "logout": "Desconectarse"
+            }
+        },
+        "notAuth": {
+            "names": {
+                "login": "Conectarse",
+                "signup": "Registrarse"
+            }
+        },
+        "both": {
+            "names": {
+                "index": "Inicio",
+                "nav": "Menú"
+            }
         }
     },
     "pageTitles": {
-        "indexTitle": "Inicio",
-        "menuTitle": "Menú",
-        "accountTitle": "Mi Cuenta",
+        "accountTitles": {
+            "account": "Mi Cuenta"
+        },
+        "authTitles": {
+            "login": "Conectarse",
+            "signup": "Registrarse"
+        },
+        "menusTitles": {
+            "index": "Inicio",
+            "menu": "Menú"
+        },
         "generatorTitle": "Generador",
         "savedTitle": "Contraseñas",
-        "loginTitle": "Conectarse",
-        "signupTitle": "Registrarse",
         "errorsTitle": {
             "403": "403",
             "404": "404",
             "500": "500"
+        }
+    },
+    "loginView": {
+        "form": {
+            "email": "Correo electrónico",
+            "pass": "Contraseña",
+            "login": "Conectarse"
+        },
+        "resetPass": "¿Se te ha olvidado la contraseña?",
+        "validationErrors": {
+            "email": "Introduzca un correo electrónico válido",
+            "pass": "La contraseña introducida no es válida",
+            "emailNotFound": "No existe una cuenta con dicho correo electrónico"
+        }
+    },
+    "signupView": {
+        "form": {
+            "email": "Correo electrónico",
+            "alias": "Alias",
+            "pass": "Contraseña",
+            "confirmPass": "Confirma la contraseña",
+            "signup": "Registrarse"
+        },
+        "validationErrors": {
+            "email": "Introduzca un correo electrónico válido",
+            "emailExists": "Ya existe una cuenta con dicho correo electrónico",
+            "alias": "Introduzca un alias que solo contenga números y letras",
+            "aliasLength": "El alias debe tener un mínimo de 4 carácteres y un máximo de 12 carácteres",
+            "pass": "Introduzca una contraseña con al menos un número, un carácter especial y una longitud de 8 carácteres",
+            "confirmPass": "Las contraseñas tienen que coincidir"
         }
     }
 }

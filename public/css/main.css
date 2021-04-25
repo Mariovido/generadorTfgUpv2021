@@ -159,6 +159,42 @@ form {
     display: none;
 }
 
+.btn {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    font: inherit;
+    border: 1px solid #11c27e;
+    color: #11c27e;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #11c27e;
+    color: white;
+}
+
+.user-message {
+    margin: auto;
+    font-weight: bold;
+    width: 25rem;
+    max-width: 90%;
+    border: 1px solid #2e62a7;
+    padding: 0.5rem;
+    border-radius: 3px;
+    background: #a6e3ff;
+    text-align: center;
+}
+
+.user-message--error {
+    border-color: red;
+    background: rgb(255, 176, 176);
+    color: red;
+}
+
 @media (min-width: 800px) {
     .main-header__nav {
       display: flex;

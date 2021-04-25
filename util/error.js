@@ -1,4 +1,4 @@
-module.exports = async (err, status, next) => {
+module.exports = (err, status, next) => {
     const error = new Error(err);
     if (status) {
         error.statusCode = status;
