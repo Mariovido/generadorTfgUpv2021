@@ -177,6 +177,10 @@ form {
     color: white;
 }
 
+.btn:disabled {
+    visibility: hidden;
+}
+
 .user-message {
     margin: auto;
     font-weight: bold;
