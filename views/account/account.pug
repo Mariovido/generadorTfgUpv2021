@@ -1,9 +1,32 @@
 extends ../layouts/main-layout.pug
 
 block styles 
-    // link(rel="stylesheet", href="/css/product.css")
+    link(rel="stylesheet", href="/css/forms.css")
+    link(rel="stylesheet", href="/css/account.css")
 
 block content 
     main
-        div Estoy en mi cuenta.
+        if errorMessage 
+            div.user-message.user-message--error #{errorMessage}
+        form.account-form(action="/account", method="POST")
+            .form-control-account
+                label(for="email") #{accountNames.form.email}
+                input(type="text", name="email", value=input.email, disabled="true")#email
+            .form-control-account
+                label(for="userAlias") #{accountNames.form.alias}
+                input(class=validationErrors.find(e => e.param === 'userAlias') ? 'invalid' : '', type="text", name="userAlias", value=input.userAlias, disabled="true")#userAlias
+            .form-control-account
+                label(for="userName") #{accountNames.form.name}
+                input(class=validationErrors.find(e => e.param === 'userName') ? 'invalid' : '', type="text", name="userName", value=input.userName, disabled="true")#userName
+            .form-control-account
+                label(for="userAge") #{accountNames.form.age}
+                input(class=validationErrors.find(e => e.param === 'userAge') ? 'invalid' : '', type="text", name="userAge", value=input.userAge, disabled="true")#userAge
+            .form-control-account
+                label(for="userCity") #{accountNames.form.city}
+                input(class=validationErrors.find(e => e.param === 'userCity') ? 'invalid' : '', type="text", name="userCity", value=input.userCity, disabled="true")#userCity
+            input(type="hidden", name="_csrf", value=csrfToken)
+            button.btn(type="submit") #{accountNames.form.save}
+            button.btn(type="button")#edit #{accountNames.form.edit}
+            button.btn(type="button", disabled="true")#revert #{accountNames.form.revert}
 block scripts 
+    script(src="/js/account.js")

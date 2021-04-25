@@ -13,18 +13,20 @@ const errorMessage = require('../util/errorMessage');
 // EXPORTS
 exports.getLogin = async (req, res, next) => {
     const message = errorMessage(req);
-    res.render('auth/login', {
-        path: '/login',
-        pageTitle: req.t('pageTitles.authTitles.login'),
-        navNames: req.t('nav'),
-        loginNames: req.t('loginView'),
-        errorMessage: message,
-        validationErrors: [],
-        oldInput: {
-            email: '',
-            password: ''
-        }
-    });
+    return res
+        .status(200)
+        .render('auth/login', {
+            path: '/login',
+            pageTitle: req.t('pageTitles.authTitles.login'),
+            navNames: req.t('nav'),
+            loginNames: req.t('loginView'),
+            errorMessage: message,
+            validationErrors: [],
+            oldInput: {
+                email: '',
+                password: ''
+            }
+        });
 };
 
 exports.postLogin = async (req, res, next) => {
@@ -46,7 +48,7 @@ exports.postLogin = async (req, res, next) => {
                     email: email,
                     password: password
                 }
-            })
+            });
     }
     try {
         const user = await User.findOne({
@@ -66,7 +68,7 @@ exports.postLogin = async (req, res, next) => {
                         email: email,
                         password: password
                     }
-                })
+                });
         }
         const doMatch = await bcrypt.compare(password, user.password);
         if (doMatch) {
@@ -76,7 +78,9 @@ exports.postLogin = async (req, res, next) => {
                 if (err) {
                     errorThrow(err, 500, next)
                 }
-                res.redirect('/menu');
+                return res
+                    .status(200)
+                    .redirect('/menu');
             });
         }
         return res 
@@ -92,7 +96,7 @@ exports.postLogin = async (req, res, next) => {
                     email: email,
                     password: password
                 }
-            })
+            });
     } catch (err) {
         errorThrow(err, 500, next);
     }
@@ -100,20 +104,22 @@ exports.postLogin = async (req, res, next) => {
 
 exports.getSignup = async (req, res, next) => {
     const message = errorMessage(req);
-    res.render('auth/signup', {
-        path: '/signup',
-        pageTitle: req.t('pageTitles.authTitles.signup'),
-        navNames: req.t('nav'),
-        signupNames: req.t('signupView'),
-        errorMessage: message,
-        validationErrors: [],
-        oldInput: {
-            email: '',
-            alias: '',
-            password: '',
-            confirmPassword: ''
-        }
-    });
+    return res
+        .status(200)
+        .render('auth/signup', {
+            path: '/signup',
+            pageTitle: req.t('pageTitles.authTitles.signup'),
+            navNames: req.t('nav'),
+            signupNames: req.t('signupView'),
+            errorMessage: message,
+            validationErrors: [],
+            oldInput: {
+                email: '',
+                alias: '',
+                password: '',
+                confirmPassword: ''
+            }
+        });
 };
 
 exports.postSignup = async (req, res, next) => {
@@ -139,7 +145,7 @@ exports.postSignup = async (req, res, next) => {
                     password: password,
                     confirmPassword: confirmPassword
                 }
-            })
+            });
     }
     try {
         const userInfo = new UserInfo({
@@ -159,7 +165,9 @@ exports.postSignup = async (req, res, next) => {
             if (err) {
                 errorThrow(err, 500, next);
             }
-            res.redirect('/menu');
+            return res
+                .status(201)
+                .redirect('/menu');
         });
     } catch (err) {
         errorThrow(err, 500, next);
@@ -186,6 +194,8 @@ exports.postLogout = async (req, res, next) => {
         if (err) {
             errorThrow(err, 500, next);
         }
-        res.redirect('/');
+        res
+            .status(200)
+            .redirect('/');
     });
 };

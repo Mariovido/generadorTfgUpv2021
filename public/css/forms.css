@@ -5,6 +5,7 @@
 .form-control label,
 .form-control input,
 .form-control textarea {
+    font-weight: bold;
     display: block;
     width: 100%;
     margin-bottom: 0.25rem;
@@ -24,5 +25,41 @@
 
 .form-control input.invalid,
 .form-control textarea.invalid {
+    border-color: red;
+}
+
+.form-control-account {
+    margin: 1rem 0;
+}
+
+.form-control-account label,
+.form-control-account input,
+.form-control-account textarea {
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.form-control-account input,
+.form-control-account textarea {
+    border: 1px solid rgb(149, 212, 186);
+    font: inherit;
+    border-radius: 2px;
+}
+
+.form-control-account input:focus,
+.form-control-account textarea:focus {
+    outline-color: #11c27e;
+}
+
+.form-control-account input:disabled,
+.form-control-account textarea:disabled {
+    font-weight: bold;
+    background-color: rgba(250, 220, 86, 0.329);
+}
+
+.form-control-account input.invalid,
+.form-control-account textarea.invalid {
     border-color: red;
 }

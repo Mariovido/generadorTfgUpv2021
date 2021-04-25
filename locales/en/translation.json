@@ -71,5 +71,27 @@
             "pass": "Enter a password with at least one number, one special character and a length of 8 characters",
             "confirmPass": "Passwords have to match"
         }
+    },
+    "accountView": {
+        "form": {
+            "email":"E-mail",
+            "alias": "Alias",
+            "name": "Name",
+            "age": "Age",
+            "city": "City",
+            "save": "Save",
+            "edit": "Edit",
+            "revert": "Revert changes"
+        },
+        "validationErrors": {
+            "alias": "Enter an alias that only contains numbers and letters",
+            "aliasLength": "The alias must have a minimum of 4 characters and a maximum of 12 characters",
+            "name": "Enter a name that only contains letters",
+            "nameLength": "The name must have a minimum of 4 characters and a maximum of 12 characters",
+            "age": "Enter a correct age",
+            "ageRange": "La edad tiene que estar entre 1 y 100",
+            "city": "Enter a city that only contains letters",
+            "cityLength": "The city must have a minimum of 4 characters and a maximum of 30 characters"
+        }
     }
 }

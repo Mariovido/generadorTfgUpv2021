@@ -71,5 +71,27 @@
             "pass": "Introduzca una contraseña con al menos un número, un carácter especial y una longitud de 8 carácteres",
             "confirmPass": "Las contraseñas tienen que coincidir"
         }
+    },
+    "accountView": {
+        "form": {
+            "email":"Correo electrónico",
+            "alias": "Alias",
+            "name": "Nombre",
+            "age": "Edad",
+            "city": "Ciudad",
+            "save": "Guardar",
+            "edit": "Editar",
+            "revert": "Revertir cambios"
+        },
+        "validationErrors": {
+            "alias": "Introduzca un alias que solo contenga números y letras",
+            "aliasLength": "El alias debe tener un mínimo de 4 carácteres y un máximo de 12 carácters",
+            "name": "Introduzca un nombre que solo contenga letras",
+            "nameLength": "El nombre debe tener un mínimo de 4 carácteres y un máximo de 12 carácters",
+            "age": "Introduzca una edad correcta",
+            "ageRange": "Age must be between 1 and 100",
+            "city": "Introduzca una ciudad que solo contenga letras",
+            "cityLength": "La ciudad debe tener un mínimo de 4 carácteres y un máximo de 30 carácters"
+        }
     }
 }

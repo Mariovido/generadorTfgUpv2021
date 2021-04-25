@@ -1,0 +1,13 @@
+.account-form {
+    width: 25rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.btn {
+    display: inline;
+    position: relative;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
