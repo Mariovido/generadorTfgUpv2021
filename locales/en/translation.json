@@ -28,7 +28,12 @@
         },
         "authTitles": {
             "login": "Login",
-            "signup": "Signup"
+            "signup": "Signup",
+            "resetPassword": "Reset password",
+            "emailSended": "Resend e-mail",
+            "confirm": "Confirm account",
+            "newPassword": "New password",
+            "reestablished": "Password reset"
         },
         "menusTitles": {
             "index": "Home",
@@ -70,6 +75,14 @@
             "aliasLength": "The alias must have a minimum of 4 characters and a maximum of 12 characters",
             "pass": "Enter a password with at least one number, one special character and a length of 8 characters",
             "confirmPass": "Passwords have to match"
+        },
+        "email": {
+            "subject": "Confirm your account",
+            "html": {
+                "firstLine": "Thanks for signing up!",
+                "secondLine": "Now you must click on this link to activate your account.",
+                "thirdLine": "All the best"
+            }
         }
     },
     "accountView": {
@@ -79,10 +92,10 @@
             "name": "Name",
             "age": "Age",
             "city": "City",
-            "save": "Save",
-            "edit": "Edit",
-            "revert": "Revert changes"
+            "save": "Save"
         },
+        "edit": "Edit",
+        "revert": "Revert changes",
         "validationErrors": {
             "alias": "Enter an alias that only contains numbers and letters",
             "aliasLength": "The alias must have a minimum of 4 characters and a maximum of 12 characters",
@@ -92,6 +105,81 @@
             "ageRange": "La edad tiene que estar entre 1 y 100",
             "city": "Enter a city that only contains letters",
             "cityLength": "The city must have a minimum of 4 characters and a maximum of 30 characters"
+        }
+    },
+    "resetPasswordView": {
+        "form": {
+            "email": "E-mail",
+            "resetPass": "Reset password"
+        },
+        "validationErrors": {
+            "email": "Please enter a valid email",
+            "emailNotFound": "There is no account with this email"
+        },
+        "email": {
+            "subject": "Reset password",
+            "html": {
+                "firstLine": "You have requested to reset your password.",
+                "secondLine": {
+                    "first": "Click on this",
+                    "link": "link",
+                    "second": " to set another new password."
+                },
+                "thirdLine": "This link will be valid for 1 hour.",
+                "fourthLine": "If you have not requested a password change, please ignore this email."
+            }
+        }
+    },
+    "emailSendedView": {
+        "form": {
+            "resendMail": "Resend e-mail"
+        },
+        "text": {
+            "firstLine": "If you have not received the mail, press the resend e-mail button.",
+            "secondLine": "Before pressing it, keep in mind that the mail may take a minute to arrive depending on the traffic.",
+            "thirdLine": "If the problem persists, contact this email ",
+            "fourthLine": "Thank you very much for your understanding."
+        }
+    },
+    "confirmView": {
+        "form": {
+            "backIndex": "Go back to index"
+        },
+        "text": {
+            "firstLine":  {
+                "first": "The account with the email \"",
+                "second": "\" has been confirmed."
+            },
+            "secondLine": "From now on you will have all the functionalities of the application available.",
+            "thirdLine": "If you need help or have a problem, please contact this email "
+        }
+    },
+    "newPasswordView": {
+        "form": {
+            "newPassword": "New password",
+            "confirmNewPassword": "Confirm new password",
+            "changePass": "Change password"
+        },
+        "validationErrors": {
+            "newPass": "Enter a password with at least one number, one special character and a length of 8 characters",
+            "confirmNewPass": "Passwords have to match"
+        },
+        "email": {
+            "subject": "Password reset",
+            "html": {
+                "firstLine": "The password has been reset!",
+                "secondLine": "If you were not the one who did it, please contact us as soon as possible by replying to this email.",
+                "thirdLine": "All the best"
+            }
+        }
+    },
+    "reestablishedView": {
+        "form": {
+            "backLogin": "Back to login"
+        },
+        "text": {
+            "firstLine": "The password has been reset successfully",
+            "secondLine": "If you need more help, do not hesitate to contact us through this email "
         }
     }
 }

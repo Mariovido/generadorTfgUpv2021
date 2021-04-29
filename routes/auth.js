@@ -22,7 +22,8 @@ router.post(
             .withMessage((value, {req}) => {
                 return req.t('loginView.validationErrors.email');
             })
-            .normalizeEmail(),
+            .toLowerCase()
+            .trim(),
         body('password', (value, {req}) => {
                 return req.t('loginView.validationErrors.pass');
             })
@@ -48,7 +49,8 @@ router.post(
                     return Promise.reject(req.t('signupView.validationErrors.emailExists'));
                 }
             })
-            .normalizeEmail(),
+            .toLowerCase()
+            .trim(),
         body('alias')
             .isAlphanumeric()
             .withMessage((value, {req}) => {
@@ -78,11 +80,49 @@ router.post(
     ],
     authController.postSignup
 );
+router.get('/confirm/:token', authController.getConfirm);
 router.get('/reset-password', authController.getResetPassword);
-router.post('/reset-password', authController.postResetPassword);
-router.get('/reestablished', authController.getReestablished);
-router.get('/new-password', authController.getNewPassword);
-router.post('/new-password', authController.postNewPassword);
+router.post(
+    '/reset-password', 
+    [
+        check('email')
+            .isEmail()
+            .withMessage((value, {req}) => {
+                return req.t('resetPasswordView.validationErrors.email');
+            })
+            .custom(async (value, {req}) => {
+                const user = await User.findOne({
+                    email: value
+                });
+                if (!user) {
+                    return Promise.reject(req.t('resetPasswordView.validationErrors.emailNotFound'));
+                }
+            })
+            .toLowerCase()
+            .trim()
+    ],
+    authController.postResetPassword
+);
+router.get('/new-password/:token', authController.getNewPassword);
+router.post(
+    '/new-password', 
+    [
+        check('newPassword', (value, {req}) => {
+            return req.t('newPasswordView.validationErrors.newPass');
+        })
+        .matches(regex, 'i')
+        .trim(),
+    body('confirmNewPassword')
+        .trim()
+        .custom((value, {req}) => {
+            if (value !== req.body.newPassword) {
+                throw new Error(req.t('newPasswordView.validationErrors.confirmNewPass'));
+            }
+            return true;
+        })
+    ],
+    authController.postNewPassword
+);
 router.post('/logout', authController.postLogout);
 
 module.exports = router;

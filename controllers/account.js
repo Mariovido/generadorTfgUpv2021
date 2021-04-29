@@ -9,51 +9,27 @@ const UserInfo = require('../models/userInfo');
 const errorThrow = require('../util/error');
 const errorMessage = require('../util/errorMessage');
 
+//INITIALIZATION
+
 // EXPORTS
 exports.getAccount = async (req, res, next) => {
-    const user = await User
-        .findById(req.user._id)
-        .populate('userInfo');
-    const message = errorMessage(req);
-    return res
-        .status(200)
-        .render('account/account', {
-            path: '/account',
-            pageTitle: req.t('pageTitles.accountTitles.account'),
-            navNames: req.t('nav'),
-            accountNames: req.t('accountView'),
-            errorMessage: message,
-            validationErrors: [],
-            input: {
-                email: user.email,
-                userAlias: user.userInfo.userAlias,
-                userName: user.userInfo.userName || '',
-                userAge: user.userInfo.userAge || '',
-                userCity: user.userInfo.userCity || ''
-            }
-        });
-};
-
-exports.postAccount = async (req, res, next) => {
-    const userAlias = req.body.userAlias;
-    const userName = req.body.userName;
-    const userAge = req.body.userAge;
-    const userCity = req.body.userCity;
-
-    const user = await User
-        .findById(req.user._id)
-        .populate('userInfo');
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
+    try {
+        const user = await User
+            .findById(req.user._id)
+            .populate('userInfo');
+        if (!user) {
+            return errorThrow(err, 403, next);
+        }
+        const message = errorMessage(req);
         return res
-            .status(422)
+            .status(200)
             .render('account/account', {
                 path: '/account',
                 pageTitle: req.t('pageTitles.accountTitles.account'),
                 navNames: req.t('nav'),
                 accountNames: req.t('accountView'),
-                errorMessage: errors.array()[0].msg,
-                validationErrors: errors.array(),
+                errorMessage: message,
+                validationErrors: [],
                 input: {
                     email: user.email,
                     userAlias: user.userInfo.userAlias,
@@ -62,8 +38,43 @@ exports.postAccount = async (req, res, next) => {
                     userCity: user.userInfo.userCity || ''
                 }
             });
+    } catch (err) {
+        errorThrow(err, 500, next);
     }
+};
+
+exports.postAccount = async (req, res, next) => {
+    const userAlias = req.body.userAlias;
+    const userName = req.body.userName;
+    const userAge = req.body.userAge;
+    const userCity = req.body.userCity;
     try {
+        const user = await User
+            .findById(req.user._id)
+            .populate('userInfo');
+        if (!user) {
+            return errorThrow(err, 403, next);
+        }
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res
+                .status(422)
+                .render('account/account', {
+                    path: '/account',
+                    pageTitle: req.t('pageTitles.accountTitles.account'),
+                    navNames: req.t('nav'),
+                    accountNames: req.t('accountView'),
+                    errorMessage: errors.array()[0].msg,
+                    validationErrors: errors.array(),
+                    input: {
+                        email: user.email,
+                        userAlias: user.userInfo.userAlias,
+                        userName: user.userInfo.userName || '',
+                        userAge: user.userInfo.userAge || '',
+                        userCity: user.userInfo.userCity || ''
+                    }
+                });
+        }
         const userInfo = await UserInfo
             .findById(req.user.userInfo);
         if (!userInfo) {

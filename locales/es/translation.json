@@ -28,7 +28,12 @@
         },
         "authTitles": {
             "login": "Conectarse",
-            "signup": "Registrarse"
+            "signup": "Registrarse",
+            "resetPassword": "Restablecer contraseña",
+            "emailSended": "Reenviar correo",
+            "confirm": "Confirmar cuenta",
+            "newPassword": "Nueva contraseña",
+            "reestablished": "Contraseña restablecida"
         },
         "menusTitles": {
             "index": "Inicio",
@@ -70,6 +75,14 @@
             "aliasLength": "El alias debe tener un mínimo de 4 carácteres y un máximo de 12 carácteres",
             "pass": "Introduzca una contraseña con al menos un número, un carácter especial y una longitud de 8 carácteres",
             "confirmPass": "Las contraseñas tienen que coincidir"
+        },
+        "email": {
+            "subject": "Confirma tu cuenta",
+            "html": {
+                "firstLine": "Gracias por registrarte!",
+                "secondLine": "Ahora debes hacer click en este enlace para activar tu cuenta.",
+                "thirdLine": "Un saludo"
+            }
         }
     },
     "accountView": {
@@ -79,10 +92,10 @@
             "name": "Nombre",
             "age": "Edad",
             "city": "Ciudad",
-            "save": "Guardar",
-            "edit": "Editar",
-            "revert": "Revertir cambios"
+            "save": "Guardar"
         },
+        "edit": "Editar",
+        "revert": "Revertir cambios",
         "validationErrors": {
             "alias": "Introduzca un alias que solo contenga números y letras",
             "aliasLength": "El alias debe tener un mínimo de 4 carácteres y un máximo de 12 carácters",
@@ -92,6 +105,81 @@
             "ageRange": "Age must be between 1 and 100",
             "city": "Introduzca una ciudad que solo contenga letras",
             "cityLength": "La ciudad debe tener un mínimo de 4 carácteres y un máximo de 30 carácters"
+        }
+    },
+    "resetPasswordView": {
+        "form": {
+            "email": "Correo electrónico",
+            "resetPass": "Restablecer contraseña"
+        },
+        "validationErrors": {
+            "email": "Introduzca un correo electrónico válido",
+            "emailNotFound": "No existe una cuenta con dicho correo electrónico"
+        },
+        "email": {
+            "subject": "Reestablecer contraseña",
+            "html": {
+                "firstLine": "Has solicitado reestablecer la contraseña.",
+                "secondLine": {
+                    "first": "Haz click en este {{link}}",
+                    "link": "enlace",
+                    "second": " para establecer otra contraseña nueva."
+                },
+                "thirdLine": "Este link tendrá validez durante 1 hora.",
+                "fourthLine": "Si no ha solicitado un cambio de contraseña, ignore este email."
+            }
+        }
+    },
+    "emailSendedView": {
+        "form": {
+            "resendMail": "Reenviar correo"
+        },
+        "text": {
+            "firstLine": "Si no ha recibido el correo, pulse el botón de reenviar correo.",
+            "secondLine": "Antes de pulsarlo tenga en cuenta que el correo puede tardar un minuto en llegar dependiendo del tráfico que haya.",
+            "thirdLine": "Si el problema persiste pongase en contacto con este correo ",
+            "fourthLine": "Muchas gracias por su comprensión."
+        }
+    },
+    "confirmView": {
+        "form": {
+            "backIndex": "Volver a Inicio"
+        },
+        "text": {
+            "firstLine": {
+                "first": "La cuenta con el correo \"",
+                "second": "\" ha sido confirmada."
+            },
+            "secondLine": "A partir de ahora tendrá disponibles todas las funcionalidades de la aplicación.",
+            "thirdLine": "Si necesita ayuda o tiene algún problema pongase en contacto con este correo "
+        }
+    },
+    "newPasswordView": {
+        "form": {
+            "newPassword": "Nueva contraseña",
+            "confirmNewPassword": "Confirma nueva contraseña",
+            "changePass": "Cambiar contraseña"
+        },
+        "validationErrors": {
+            "newPass": "Introduzca una contraseña con al menos un número, un carácter especial y una longitud de 8 carácteres",
+            "confirmNewPass": "Las contraseñas tienen que coincidir"
+        },
+        "email": {
+            "subject": "Contraseña restablecida",
+            "html": {
+                "firstLine": "La contraseña ha sido restablecida!",
+                "secondLine": "Si no ha sido usted quien lo ha hecho, pongase en contacto con nosotros lo antes posible respondiendo a este email.",
+                "thirdLine": "Un saludo"
+            }
+        }
+    },
+    "reestablishedView": {
+        "form": {
+            "backLogin": "Volver a conectarse"
+        },
+        "text": {
+            "firstLine": "La contraseña ha sido restablecida con éxito",
+            "secondLine": "Si necesita más ayuda, no dude en contactar con nosotros a través de este correo "
         }
     }
 }

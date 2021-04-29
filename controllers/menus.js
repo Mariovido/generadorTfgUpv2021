@@ -6,6 +6,8 @@
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 // const User = require('../models/user');
 
+//INITIALIZATION
+
 // EXPORTS
 exports.getIndex = async (req, res, next) => {
     res.render('menus/index', {

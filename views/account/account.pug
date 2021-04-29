@@ -25,8 +25,8 @@ block content
                 label(for="userCity") #{accountNames.form.city}
                 input(class=validationErrors.find(e => e.param === 'userCity') ? 'invalid' : '', type="text", name="userCity", value=input.userCity, disabled="true")#userCity
             input(type="hidden", name="_csrf", value=csrfToken)
-            button.btn(type="submit") #{accountNames.form.save}
-            button.btn(type="button")#edit #{accountNames.form.edit}
-            button.btn(type="button", disabled="true")#revert #{accountNames.form.revert}
+            button.btn(type="button")#edit #{accountNames.edit}
+            button.btn(type="submit", disabled="true")#save #{accountNames.form.save}
+            button.btn(type="button", disabled="true")#revert #{accountNames.revert}
 block scripts 
     script(src="/js/account.js")
