@@ -22,6 +22,15 @@ const userSchema = new Schema({
         type: Date,
         required: false
     },
+    confirmToken: {
+        type: String,
+        required: false
+    },
+    isConfirm: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
     userInfo: {
         type: Schema.Types.ObjectId,
         ref: 'UserInfo',

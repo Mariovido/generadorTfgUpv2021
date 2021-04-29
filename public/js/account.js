@@ -1,4 +1,5 @@
 const edit = document.querySelector('#edit');
+const save = document.querySelector('#save');
 const revert = document.querySelector('#revert');
 const userAlias = document.querySelector('#userAlias');
 const userName = document.querySelector('#userName');
@@ -12,6 +13,7 @@ let userCityValue;
 
 function editClickHandler() {
     if (userAlias.disabled) {
+        save.disabled = false;
         revert.disabled = false;
         userAlias.disabled = false;
         userName.disabled = false;
@@ -22,6 +24,7 @@ function editClickHandler() {
         userAgeValue = userAge.value;
         userCityValue = userCity.value;
     } else {
+        save.disabled = true;
         revert.disabled = true;
         userAlias.disabled = true;
         userName.disabled = true;

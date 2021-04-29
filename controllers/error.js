@@ -4,6 +4,8 @@
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 
+//INITIALIZATION
+
 // EXPORTS
 exports.get500 = (req, res, next) => {
     res.render('error/500', {

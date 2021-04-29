@@ -30,7 +30,7 @@ router.post(
             })
             .trim(),
         body('userName')
-            .matches(regexAlphaWithSpaces)
+            .matches(regexAlphaWithSpaces, 'i')
             .withMessage((value, {req}) => {
                 return req.t('accountView.validationErrors.name');
             })
@@ -53,7 +53,7 @@ router.post(
                 return true;
             }),
         body('userCity')
-            .matches(regexAlphaWithSpaces)
+            .matches(regexAlphaWithSpaces, 'i')
             .withMessage((value, {req}) => {
                 return req.t('accountView.validationErrors.city');
             })
