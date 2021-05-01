@@ -1,6 +1,7 @@
 const edit = document.querySelector('#edit');
 const save = document.querySelector('#save');
 const revert = document.querySelector('#revert');
+const changePassword = document.querySelector('#changePassword');
 const userAlias = document.querySelector('#userAlias');
 const userName = document.querySelector('#userName');
 const userAge = document.querySelector('#userAge');
@@ -15,6 +16,7 @@ function editClickHandler() {
     if (userAlias.disabled) {
         save.disabled = false;
         revert.disabled = false;
+        changePassword.disabled = false;
         userAlias.disabled = false;
         userName.disabled = false;
         userAge.disabled = false;
@@ -26,6 +28,7 @@ function editClickHandler() {
     } else {
         save.disabled = true;
         revert.disabled = true;
+        changePassword.disabled = true;
         userAlias.disabled = true;
         userName.disabled = true;
         userAge.disabled = true;

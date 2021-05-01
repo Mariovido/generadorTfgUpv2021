@@ -8,11 +8,12 @@ block content
     main
         if errorMessage 
             div.user-message.user-message--error #{errorMessage}
+        if message 
+            div.user-message.user-message #{message}
         div.centered
             p #{confirmNames.text.firstLine.first}#{email}#{confirmNames.text.firstLine.second}
             p #{confirmNames.text.secondLine}
             p #{confirmNames.text.thirdLine} #{emailSender}
-            form.signup-form(action="/", method="GET")
-                input(type="hidden", name="_csrf", value=csrfToken)
+            button.btn(action="/", method="GET")
                 button.btn(type="submit") #{confirmNames.form.backIndex}
 block scripts 

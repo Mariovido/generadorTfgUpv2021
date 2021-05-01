@@ -24,7 +24,8 @@
     },
     "pageTitles": {
         "accountTitles": {
-            "account": "My Account"
+            "account": "My Account",
+            "changePassword": "Change password"
         },
         "authTitles": {
             "login": "Login",
@@ -46,6 +47,9 @@
             "404": "404",
             "500": "500"
         }
+    },
+    "generalError": {
+        "noUserFound": "No user found"
     },
     "loginView": {
         "form": {
@@ -96,6 +100,7 @@
         },
         "edit": "Edit",
         "revert": "Revert changes",
+        "changePassword": "Change password",
         "validationErrors": {
             "alias": "Enter an alias that only contains numbers and letters",
             "aliasLength": "The alias must have a minimum of 4 characters and a maximum of 12 characters",
@@ -180,6 +185,28 @@
         "text": {
             "firstLine": "The password has been reset successfully",
             "secondLine": "If you need more help, do not hesitate to contact us through this email "
+        }
+    },
+    "changePasswordView": {
+        "form": {
+            "actualPassword": "Current password",
+            "newPassword": "New password",
+            "confirmNewPassword": "Confirm new password",
+            "changePass": "Change password"
+        },
+        "successfully": "Password changed successfully",
+        "validationErrors": {
+            "actualPassword": "The current password entered is incorrect",
+            "newPass": "Enter a password with at least one number, one special character and a length of 8 characters",
+            "confirmNewPass": "Passwords have to match"
+        },
+        "email": {
+            "subject": "Password changed",
+            "html": {
+                "firstLine": "The password has been changed!",
+                "secondLine": "If you were not the one who did it, please contact us as soon as possible by replying to this email.",
+                "thirdLine": "All the best"
+            }
         }
     }
 }

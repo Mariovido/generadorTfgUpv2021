@@ -3,13 +3,16 @@ const express = require('express');
 
 // NPM PACKAGES DECLARATIONS
 const {check, body} = require('express-validator');
+const bcrypt = require('bcryptjs');
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 const accountController = require('../controllers/account');
+const User = require('../models/user');
 
 // INITIALIZATION
 const router = express.Router();
 const regexAlphaWithSpaces = /^(?=.*[A-Za-z])[A-Za-z\s]{1,}$/;
+const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 // ROUTES ../account
 router.get('/', accountController.getAccount);
@@ -68,6 +71,33 @@ router.post(
     accountController.postAccount
 );
 router.get('/change-password', accountController.getChangePassword);
-router.post('/change-password', accountController.postChangePassword);
+router.post(
+    '/change-password', 
+    [   
+        check('actualPassword')
+            .trim()
+            .custom(async (value, {req}) => {
+                const doMatch = await bcrypt.compare(value, req.user.password);
+                if (!doMatch) {
+                    throw new Error(req.t('changePasswordView.validationErrors.actualPassword'));
+                }
+                return true;
+            }),
+        check('newPassword', (value, {req}) => {
+                return req.t('changePasswordView.validationErrors.newPass');
+            })
+            .matches(regex, "i")
+            .trim(),
+        body('confirmNewPassword')
+            .trim()
+            .custom((value, {req}) => {
+                if (value !== req.body.newPassword) {
+                    throw new Error(req.t('changePasswordView.validationErrors.confirmNewPass'));
+                }
+                return true;
+            })
+    ],
+    accountController.postChangePassword
+);
 
 module.exports = router;

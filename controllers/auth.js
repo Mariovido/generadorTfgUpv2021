@@ -11,13 +11,15 @@ const User = require('../models/user');
 const UserInfo = require('../models/userInfo');
 const errorThrow = require('../util/error');
 const errorMessage = require('../util/errorMessage');
+const infoMessage = require('../util/infoMessage');
 
 //INITIALIZATION
 sendGrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 // EXPORTS
 exports.getLogin = async (req, res, next) => {
-    const message = errorMessage(req);
+    const error = errorMessage(req);
+    const message = infoMessage(req);
     return res
         .status(200)
         .render('auth/login', {
@@ -25,8 +27,9 @@ exports.getLogin = async (req, res, next) => {
             pageTitle: req.t('pageTitles.authTitles.login'),
             navNames: req.t('nav'),
             loginNames: req.t('loginView'),
-            errorMessage: message,
+            errorMessage: error,
             validationErrors: [],
+            message: message,
             oldInput: {
                 email: '',
                 password: ''
@@ -39,6 +42,7 @@ exports.postLogin = async (req, res, next) => {
     const password = req.body.password;
 
     const errors = validationResult(req);
+    const message = infoMessage(req);
     if (!errors.isEmpty()) {
         return res
             .status(422)
@@ -49,6 +53,7 @@ exports.postLogin = async (req, res, next) => {
                 loginNames: req.t('loginView'),
                 errorMessage: errors.array()[0].msg,
                 validationErrors: errors.array(),
+                message: message,
                 oldInput: {
                     email: email,
                     password: password
@@ -69,6 +74,7 @@ exports.postLogin = async (req, res, next) => {
                     loginNames: req.t('loginView'),
                     errorMessage: req.t('loginView.validationErrors.emailNotFound'),
                     validationErrors: [],
+                    message: message,
                     oldInput: {
                         email: email,
                         password: password
@@ -97,18 +103,20 @@ exports.postLogin = async (req, res, next) => {
                 loginNames: req.t('loginView'),
                 errorMessage: req.t('loginView.validationErrors.pass'),
                 validationErrors: [],
+                message: message,
                 oldInput: {
                     email: email,
                     password: password
                 }
             });
     } catch (err) {
-        errorThrow(err, 500, next);
+        return errorThrow(err, 500, next);
     }
 };
 
 exports.getSignup = async (req, res, next) => {
-    const message = errorMessage(req);
+    const error = errorMessage(req);
+    const message = infoMessage(req);
     return res
         .status(200)
         .render('auth/signup', {
@@ -116,8 +124,9 @@ exports.getSignup = async (req, res, next) => {
             pageTitle: req.t('pageTitles.authTitles.signup'),
             navNames: req.t('nav'),
             signupNames: req.t('signupView'),
-            errorMessage: message,
+            errorMessage: error,
             validationErrors: [],
+            message: message,
             oldInput: {
                 email: '',
                 alias: '',
@@ -134,6 +143,7 @@ exports.postSignup = async (req, res, next) => {
     const confirmPassword = req.body.confirmPassword;
 
     const errors = validationResult(req);
+    const message = infoMessage(req);
     if (!errors.isEmpty()) {
         return res
             .status(422)
@@ -144,6 +154,7 @@ exports.postSignup = async (req, res, next) => {
                 signupNames: req.t('signupView'),
                 errorMessage: errors.array()[0].msg,
                 validationErrors: errors.array(),
+                message: message,
                 oldInput: {
                     email: email,
                     alias: alias,
@@ -159,9 +170,9 @@ exports.postSignup = async (req, res, next) => {
         const userInfoSaved = await userInfo.save();
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        crypto.randomBytes(32, async (err, buffer) => {
+        return crypto.randomBytes(32, async (err, buffer) => {
             if (err) {
-                errorThrow(err, 500, next);
+                return errorThrow(err, 500, next);
             }
             const token = buffer.toString('hex');
             const user = new User({
@@ -175,7 +186,7 @@ exports.postSignup = async (req, res, next) => {
             req.session.user = user;
             return req.session.save(async (err) => {
                 if (err) {
-                    errorThrow(err, 500, next);
+                    return errorThrow(err, 500, next);
                 }
                 await res
                     .status(201)
@@ -194,20 +205,21 @@ exports.postSignup = async (req, res, next) => {
             });
         });
     } catch (err) {
-        errorThrow(err, 500, next);
+        return errorThrow(err, 500, next);
     }
 };
 
 exports.getConfirm = async (req, res, next) => {
     const token = req.params.token; 
     
+    const message = infoMessage(req);
     try {
         const user = await User.findOne({
             confirmToken: token,
             isConfirm: false
         });
         if (!user) {
-            errorThrow(err, 500, next);
+            return errorThrow(req.t('generalError.noUserFound'), 500, next);
         }
         user.isConfirm = true;
         user.confirmToken = undefined;
@@ -221,16 +233,18 @@ exports.getConfirm = async (req, res, next) => {
                 confirmNames: req.t('confirmView'),
                 errorMessage: null,
                 validationErrors: [],
+                message: message,
                 email: user.email,
                 emailSender: process.env.EMAIL_SENDER
             });
     } catch (err) {
-        errorThrow(err, 500, next);
+        return errorThrow(err, 500, next);
     }
 };
 
 exports.getResetPassword = async (req, res, next) => {
-    const message = errorMessage(req);
+    const error = errorMessage(req);
+    const message = infoMessage(req);
     return res
         .status(200)
         .render('auth/reset-password', {
@@ -238,8 +252,9 @@ exports.getResetPassword = async (req, res, next) => {
             pageTitle: req.t('pageTitles.authTitles.resetPassword'),
             navNames: req.t('nav'),
             resetPasswordNames: req.t('resetPasswordView'),
-            errorMessage: message,
+            errorMessage: error,
             validationErrors: [],
+            message: message,
             oldInput: {
                 email: '',
             }
@@ -250,6 +265,7 @@ exports.postResetPassword = async (req, res, next) => {
     const email = req.body.email;
 
     const errors = validationResult(req);
+    const message = infoMessage(req);
     if (!errors.isEmpty()) {
         return res
             .status(422)
@@ -260,22 +276,23 @@ exports.postResetPassword = async (req, res, next) => {
                 resetPasswordNames: req.t('resetPasswordView'),
                 errorMessage: errors.array()[0].msg,
                 validationErrors: errors.array(),
+                message: message,
                 oldInput: {
                     email: email
                 }
             });
     }
     try {
-        crypto.randomBytes(32, async (err, buffer) => {
+        return crypto.randomBytes(32, async (err, buffer) => {
             if (err) {
-                errorThrow(err, 500, next);
+                return errorThrow(err, 500, next);
             }
             const token = buffer.toString('hex');
             const user = await User.findOne({
                 email: email
             });
             if (!user) {
-                errorThrow('resetPasswordView.validationErrors.emailNotFound', 500, next);
+                return errorThrow('resetPasswordView.validationErrors.emailNotFound', 500, next);
             }
             user.resetToken = token;
             user.resetTokenExpiration = Date.now() + 3600000;
@@ -289,6 +306,7 @@ exports.postResetPassword = async (req, res, next) => {
                     emailSendedNames: req.t('emailSendedView'),
                     errorMessage: null,
                     validationErrors: [],
+                    message: message,
                     email: email,
                     emailSender: process.env.EMAIL_SENDER
                 });
@@ -305,7 +323,7 @@ exports.postResetPassword = async (req, res, next) => {
             return sendGrid.send(msg);
         });
     } catch (err) {
-        errorThrow(err, 500, next);
+        return errorThrow(err, 500, next);
     }
 };
 
@@ -320,9 +338,10 @@ exports.getNewPassword = async (req, res, next) => {
             }
         });
         if (!user) {
-            errorThrow(err, 500, next);
+            return errorThrow(req.t('generalError.noUserFound'), 500, next);
         }
-        const message = errorMessage(req);
+        const error = errorMessage(req);
+        const message = infoMessage(req);
         return res
             .status(200)
             .render('auth/new-password', {
@@ -330,13 +349,14 @@ exports.getNewPassword = async (req, res, next) => {
                 pageTitle: req.t('pageTitles.authTitles.newPassword'),
                 navNames: req.t('nav'),
                 newPasswordNames: req.t('newPasswordView'),
-                errorMessage: message,
+                errorMessage: error,
                 validationErrors: [],
+                message: message,
                 userId: user._id.toString(),
                 token: token
             });
     } catch (err) {
-        errorThrow(err, 500, next);
+        return errorThrow(err, 500, next);
     }
 };
 
@@ -346,6 +366,7 @@ exports.postNewPassword = async (req, res, next) => {
     const userId = req.body.userId;
 
     const errors = validationResult(req);
+    const message = infoMessage(req);
     if (!errors.isEmpty()) {
         return res
             .status(422)
@@ -356,6 +377,7 @@ exports.postNewPassword = async (req, res, next) => {
                 newPasswordNames: req.t('newPasswordView'),
                 errorMessage: errors.array()[0].msg,
                 validationErrors: errors.array(),
+                message: message,
                 userId: userId,
                 token: token
             });
@@ -368,6 +390,9 @@ exports.postNewPassword = async (req, res, next) => {
             },
             _id: userId
         });
+        if (!user) {
+            return errorThrow(req.t('generalError.noUserFound'), 500, next);
+        }
         const hashedPassword = await bcrypt.hash(newPassword, 12);
         user.password = hashedPassword;
         user.resetToken = undefined;
@@ -382,6 +407,7 @@ exports.postNewPassword = async (req, res, next) => {
                 reestablishedNames: req.t('reestablishedView'),
                 errorMessage: null,
                 validationErrors: [],
+                message: message,
                 emailSender: process.env.EMAIL_SENDER
             });
         const msg = {
@@ -394,16 +420,16 @@ exports.postNewPassword = async (req, res, next) => {
         };
         return sendGrid.send(msg);
     } catch (err) {
-        errorThrow(err, 500, next);
+        return errorThrow(err, 500, next);
     }
 };
 
 exports.postLogout = async (req, res, next) => {
-    req.session.destroy((err) => {
+    return req.session.destroy((err) => {
         if (err) {
-            errorThrow(err, 500, next);
+            return errorThrow(err, 500, next);
         }
-        res
+        return res
             .status(200)
             .redirect('/');
     });

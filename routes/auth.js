@@ -108,18 +108,18 @@ router.post(
     '/new-password', 
     [
         check('newPassword', (value, {req}) => {
-            return req.t('newPasswordView.validationErrors.newPass');
-        })
-        .matches(regex, 'i')
-        .trim(),
-    body('confirmNewPassword')
-        .trim()
-        .custom((value, {req}) => {
-            if (value !== req.body.newPassword) {
-                throw new Error(req.t('newPasswordView.validationErrors.confirmNewPass'));
-            }
-            return true;
-        })
+                return req.t('newPasswordView.validationErrors.newPass');
+            })
+            .matches(regex, 'i')
+            .trim(),
+        body('confirmNewPassword')
+            .trim()
+            .custom((value, {req}) => {
+                if (value !== req.body.newPassword) {
+                    throw new Error(req.t('newPasswordView.validationErrors.confirmNewPass'));
+                }
+                return true;
+            })
     ],
     authController.postNewPassword
 );

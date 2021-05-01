@@ -5,5 +5,10 @@ block styles
 
 block content 
     main
-        div Estoy en el menu
+        if errorMessage 
+            div.user-message.user-message--error #{errorMessage}
+        if message 
+            div.user-message #{message}
+        div.centered 
+            ESTOY EN INDEX
 block scripts 

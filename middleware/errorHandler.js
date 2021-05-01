@@ -8,7 +8,7 @@ module.exports = async (error, req, res, next) => {
             }
         });
     }
-    res.status(statusCode).render(`error/${statusCode}`, {
+    return res.status(statusCode).render(`error/${statusCode}`, {
         path: `/${statusCode}`,
         pageTitle: req.t(`pageTitles.errorsTitle.${statusCode}`),
         navNames: req.t('nav')

@@ -8,6 +8,8 @@ block content
     main
         if errorMessage 
             div.user-message.user-message--error #{errorMessage}
+        if message 
+            div.user-message.user-message #{message}
         form.signup-form(action="/signup", method="POST")
             .form-control
                 label(for="email") #{signupNames.form.email}

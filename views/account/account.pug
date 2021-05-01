@@ -8,6 +8,8 @@ block content
     main
         if errorMessage 
             div.user-message.user-message--error #{errorMessage}
+        if message 
+            div.user-message.user-message #{message}
         form.account-form(action="/account", method="POST")
             .form-control-account
                 label(for="email") #{accountNames.form.email}
@@ -27,6 +29,8 @@ block content
             input(type="hidden", name="_csrf", value=csrfToken)
             button.btn(type="button")#edit #{accountNames.edit}
             button.btn(type="submit", disabled="true")#save #{accountNames.form.save}
+        form.account-form(action="/account/change-password", method="GET")
             button.btn(type="button", disabled="true")#revert #{accountNames.revert}
+            button.btn(type="submit", disabled="true")#changePassword #{accountNames.changePassword}
 block scripts 
     script(src="/js/account.js")
