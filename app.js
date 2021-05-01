@@ -3,6 +3,7 @@ const path = require('path');
 
 // NPM PACKAGES DECLARATIONS
 const express = require('express');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -21,6 +22,11 @@ const errorThrow = require('./util/error');
 const errorHandler = require('./middleware/errorHandler');
 
 // INITIALIZATION
+if (process.env.NODE_ENV) {
+    dotenv.config({
+        path: __dirname + '/.env'
+    });
+}
 const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@tfgupv2021.oabkr.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`;
 i18next
     .use(Backend)

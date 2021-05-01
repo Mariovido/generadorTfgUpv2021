@@ -8,6 +8,8 @@ block content
     main
         if errorMessage 
             div.user-message.user-message--error #{errorMessage}
+        if message 
+            div.user-message.user-message #{message}
         div.centered
             p #{emailSendedNames.text.firstLine}
             p #{emailSendedNames.text.secondLine}

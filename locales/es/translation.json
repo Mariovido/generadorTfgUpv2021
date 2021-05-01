@@ -24,7 +24,8 @@
     },
     "pageTitles": {
         "accountTitles": {
-            "account": "Mi Cuenta"
+            "account": "Mi Cuenta",
+            "changePassword": "Cambiar contraseña"
         },
         "authTitles": {
             "login": "Conectarse",
@@ -46,6 +47,9 @@
             "404": "404",
             "500": "500"
         }
+    },
+    "generalError": {
+        "noUserFound": "No se ha encontrado un usuario"
     },
     "loginView": {
         "form": {
@@ -96,6 +100,7 @@
         },
         "edit": "Editar",
         "revert": "Revertir cambios",
+        "changePassword": "Cambiar contraseña",
         "validationErrors": {
             "alias": "Introduzca un alias que solo contenga números y letras",
             "aliasLength": "El alias debe tener un mínimo de 4 carácteres y un máximo de 12 carácters",
@@ -180,6 +185,28 @@
         "text": {
             "firstLine": "La contraseña ha sido restablecida con éxito",
             "secondLine": "Si necesita más ayuda, no dude en contactar con nosotros a través de este correo "
+        }
+    },
+    "changePasswordView": {
+        "form": {
+            "actualPassword": "Contraseña actual",
+            "newPassword": "Nueva contraseña",
+            "confirmNewPassword": "Confirma nueva contraseña",
+            "changePass": "Cambiar contraseña"
+        },
+        "successfully": "Contraseña cambiada con éxito",
+        "validationErrors": {
+            "actualPassword": "La contraseña actual introducida es incorrecta",
+            "newPass": "Introduzca una contraseña con al menos un número, un carácter especial y una longitud de 8 carácteres",
+            "confirmNewPass": "Las contraseñas tienen que coincidir"
+        },
+        "email": {
+            "subject": "Contraseña cambiada",
+            "html": {
+                "firstLine": "La contraseña ha sido cambiada!",
+                "secondLine": "Si no ha sido usted quien lo ha hecho, pongase en contacto con nosotros lo antes posible respondiendo a este email.",
+                "thirdLine": "Un saludo"
+            }
         }
     }
 }
