@@ -22,7 +22,7 @@ block content
                 input(class=validationErrors.find(e => e.param === 'userName') ? 'invalid' : '', type="text", name="userName", value=input.userName, disabled="true")#userName
             .form-control-account
                 label(for="userAge") #{accountNames.form.age}
-                input(class=validationErrors.find(e => e.param === 'userAge') ? 'invalid' : '', type="text", name="userAge", value=input.userAge, disabled="true")#userAge
+                input(class=validationErrors.find(e => e.param === 'userAge') ? 'invalid' : '', type="number", name="userAge", step="0" value=input.userAge, disabled="true")#userAge
             .form-control-account
                 label(for="userCity") #{accountNames.form.city}
                 input(class=validationErrors.find(e => e.param === 'userCity') ? 'invalid' : '', type="text", name="userCity", value=input.userCity, disabled="true")#userCity

@@ -8,7 +8,7 @@ const errorMessage = require('../util/errorMessage');
 const error = require('../util/error');
 const infoMessage = require('../util/infoMessage');
 
-//INITIALIZATION
+// INITIALIZATION
 
 // DESCRIBES
 describe('UTIL TEST', function() {

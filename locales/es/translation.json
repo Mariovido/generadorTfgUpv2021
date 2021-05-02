@@ -49,7 +49,8 @@
         }
     },
     "generalError": {
-        "noUserFound": "No se ha encontrado un usuario"
+        "noUserFound": "No se ha encontrado un usuario",
+        "noUserLoggedIn": "El usuario no está conectado"
     },
     "loginView": {
         "form": {
@@ -206,6 +207,117 @@
                 "firstLine": "La contraseña ha sido cambiada!",
                 "secondLine": "Si no ha sido usted quien lo ha hecho, pongase en contacto con nosotros lo antes posible respondiendo a este email.",
                 "thirdLine": "Un saludo"
+            }
+        }
+    },
+    "indexView": {
+        "form": {
+            "login": "Conectarse",
+            "signup": "Registrarse"
+        },
+        "text": {
+            "firstH1": {
+                "title": "¿Qué es una contraseña segura?",
+                "firstLine": "Una contraseña segura es la que está compuesta por un conjunto de carácteres mayúsculas, minúsculas, símbolos y números, con una longitud larga.",
+                "secondLine": "En la actualidad, la longitud recomendada es de 12 carácteres, ya que muchos sitios web, como Google o Amazon, afirman que las de 8 carácteres con la tecnología actual se pueden adivinar en un período de tiempo relativamente pequeño."
+            },
+            "secondH1": {
+                "title": "¿Por qué deberías tener una?",
+                "firstLine": "Tener una contraseña segura ayuda a proteger tu cuenta de ataques maliciosos.",
+                "secondLine": "Además, se evitara intrusismo o suplantación de identidad digital, se evitara 'spam' u otros problemas de acceso a los datos por parte de terceros."
+            },
+            "thirdH1": {
+                "title": "Ejemplos de contraseñas inseguras",
+                "ul": {
+                    "title": "Algunas contraseñas típicas y fáciles de adivinar pueden ser las siguientes:",
+                    "li": {
+                        "first": "Contraseñas que hayas usado anteriormente.",
+                        "second": "Contraseñas que contengan algún dato personal tuyo como tu nombre, apellidos, edad...",
+                        "third": "Contraseñas con tan solo letras o palabras comunes, por ejemplo 'dontenter'.",
+                        "fourth": "Contraseñas sin simbolos ni longitud adecuada, por ejemplo 'pass12345'."
+                    }
+                }
+            },
+            "fourthH1": {
+                "title": "¿Por qué utilizar esta aplicación?",
+                "firstLine": "Esta aplicación está especializada en la generación y almacenamiento de contraseñas seguras, aunque también podrá crearlas menos seguras.",
+                "secondLine": "Las contraseñas generadas se crean a partir de ciertos datos que usted introduzca manualmente y solo podrán volverse a generar si se introducen dichos datos correctamente.",
+                "thirdLine": "Por nuestra parte, en nuestra base de datos no guardaremos ninguna contraseña, haciendo aún más díficil que nadie salvo usted pueda generarla u obtenerla."
+            }
+        }
+    },
+    "menuView": {
+        "form": {
+            "generator": "Generar contraseña",
+            "saved": "Contraseñas guardadas"
+        },
+        "text": {
+            "firstH1": {
+                "title": "¿Qué es una contraseña segura?",
+                "firstLine": "Una contraseña segura es la que está compuesta por un conjunto de carácteres mayúsculas, minúsculas, símbolos y números, con una longitud larga.",
+                "secondLine": "En la actualidad, la longitud recomendada es de 12 carácteres, ya que muchos sitios web, como Google o Amazon, afirman que las de 8 carácteres con la tecnología actual se pueden adivinar en un período de tiempo relativamente pequeño."
+            },
+            "secondH1": {
+                "title": "¿Por qué deberías tener una?",
+                "firstLine": "Tener una contraseña segura ayuda a proteger tu cuenta de ataques maliciosos.",
+                "secondLine": "Además, se evitara intrusismo o suplantación de identidad digital, se evitara 'spam' u otros problemas de acceso a los datos por parte de terceros."
+            },
+            "thirdH1": {
+                "title": "Ejemplos de contraseñas inseguras",
+                "ul": {
+                    "title": "Algunas contraseñas típicas y fáciles de adivinar pueden ser las siguientes:",
+                    "li": {
+                        "first": "Contraseñas que hayas usado anteriormente.",
+                        "second": "Contraseñas que contengan algún dato personal tuyo como tu nombre, apellidos, edad...",
+                        "third": "Contraseñas con tan solo letras o palabras comunes, por ejemplo 'dontenter'.",
+                        "fourth": "Contraseñas sin simbolos ni longitud adecuada, por ejemplo 'pass12345'."
+                    }
+                }
+            },
+            "fourthH1": {
+                "title": "¿Por qué utilizar esta aplicación?",
+                "firstLine": "Esta aplicación está especializada en la generación y almacenamiento de contraseñas seguras, aunque también podrá crearlas menos seguras.",
+                "secondLine": "Las contraseñas generadas se crean a partir de ciertos datos que usted introduzca manualmente y solo podrán volverse a generar si se introducen dichos datos correctamente.",
+                "thirdLine": "Por nuestra parte, en nuestra base de datos no guardaremos ninguna contraseña, haciendo aún más díficil que nadie salvo usted pueda generarla u obtenerla."
+            }
+        }
+    },
+    "403View": {
+        "form": {
+            "index": "Volver a inicio",
+            "menu": "Volver a menú"
+        },
+        "text": {
+            "h1": {
+                "error": "403",
+                "title": "FORBIDDEN",
+                "firstLine": "No tiene permiso para acceder / a este servidor."
+            }
+        }
+    },
+    "404View": {
+        "form": {
+            "index": "Volver a inicio",
+            "menu": "Volver a menú"
+        },
+        "text": {
+            "h1": {
+                "error": "404",
+                "title": "NOT FOUND",
+                "firstLine": "El recurso solicitado no se encontró en este servidor."
+            }
+        }
+    },
+    "500View": {
+        "form": {
+            "index": "Volver a inicio",
+            "menu": "Volver a menú"
+        },
+        "text": {
+            "h1": {
+                "error": "500",
+                "title": "INTERNAL SERVER ERROR",
+                "firstLine": "Ocurrió un error interno del servidor."
             }
         }
     }

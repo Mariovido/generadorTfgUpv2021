@@ -90,6 +90,7 @@ router.post(
             .withMessage((value, {req}) => {
                 return req.t('resetPasswordView.validationErrors.email');
             })
+            .toLowerCase()
             .custom(async (value, {req}) => {
                 const user = await User.findOne({
                     email: value
@@ -98,7 +99,6 @@ router.post(
                     return Promise.reject(req.t('resetPasswordView.validationErrors.emailNotFound'));
                 }
             })
-            .toLowerCase()
             .trim()
     ],
     authController.postResetPassword

@@ -11,6 +11,7 @@ const errorController = require('../controllers/error');
 const router = express.Router();
 
 // ROUTES ..
+router.get('/403', errorController.get403);
 router.get('/500', errorController.get500);
 router.use(errorController.get404);
 

@@ -13,7 +13,7 @@ const AuthController = require('../controllers/auth');
 const User = require('../models/user');
 const UserInfo = require('../models/userInfo');
 
-//INITIALIZATION
+// INITIALIZATION
 if (process.env.NODE_ENV) {
     dotenv.config({
         path: process.cwd() + '/.env'
@@ -74,7 +74,7 @@ describe('CONTROLLERS TEST' , function() {
                 return this;
             },
             redirect: function() {
-                this.redirect = true;
+                this.redirectValue = true;
                 this.renderValue = undefined;
                 return this;
             },
@@ -112,7 +112,7 @@ describe('CONTROLLERS TEST' , function() {
         return;
     });
 
-    describe('Auth.js', function() {
+    describe('auth.js', function() {
         describe('getLogin', function() {
             it('should return statusCode 200 and render true', async function() {
                 const getLogin = await AuthController.getLogin(req, res, next);
@@ -124,6 +124,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .have
                     .property('renderValue', true);
+                return;
             });
         });
 
@@ -173,6 +174,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
         });
         describe('postSignup', function() {
@@ -198,6 +200,7 @@ describe('CONTROLLERS TEST' , function() {
                     .be
                     .true;
                 crypto.randomBytes.restore();
+                return;
             });
         });
 
@@ -218,6 +221,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
             it('should return statusCode 500 and render true if the tokens dont match', async function() {
                 req.params = {
@@ -235,6 +239,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
         });
 
@@ -249,6 +254,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
         });
 
@@ -280,6 +286,7 @@ describe('CONTROLLERS TEST' , function() {
                     .be
                     .true;
                 crypto.randomBytes.restore();
+                return;
             });
         });
 
@@ -300,6 +307,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
             it('should return statusCode 500 and renderValue true if the tokens dont match', async function() {
                 req.params = {
@@ -317,6 +325,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
         });
 
@@ -347,6 +356,7 @@ describe('CONTROLLERS TEST' , function() {
                     .be
                     .true;
                 sendGrid.send.restore();
+                return;
             });
             it('should return statusCode 500 and renderValue true if the tokens match', async function() {
                 req.body = {
@@ -366,6 +376,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
         });
 
@@ -380,6 +391,7 @@ describe('CONTROLLERS TEST' , function() {
                     .to
                     .be
                     .true;
+                return;
             });
         });
     });
