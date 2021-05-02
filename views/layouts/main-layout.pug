@@ -14,9 +14,10 @@ html(lang="en")
             button(id="side-menu-toggle") #{navNames.both.names.nav}
             nav.main-header__nav
                 ul.main-header__item-list
-                    li.main-header__item
-                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.both.names.index}
-                    if isAuthenticated
+                    if !isAuthenticated
+                        li.main-header__item
+                            a(href="/", class=(path === '/') ? 'active' : '') #{navNames.both.names.index}
+                    else 
                         li.main-header__item
                             a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.auth.names.menu}
                         li.main-header__item
@@ -38,9 +39,10 @@ html(lang="en")
                                 button(type="submit") #{navNames.auth.names.logout} 
             nav.mobile-nav
                 ul.mobile-nav__item-list
-                    li.mobile-nav__item
-                        a(href="/", class=(path === '/') ? 'active' : '') #{navNames.both.names.index}
-                    if isAuthenticated
+                    if !isAuthenticated
+                        li.mobile-nav__item
+                            a(href="/", class=(path === '/') ? 'active' : '') #{navNames.both.names.index}
+                    else
                         li.mobile-nav__item
                             a(href="/menu", class=(path === '/menu') ? 'active' : '') #{navNames.auth.names.menu}
                         li.mobile-nav__item

@@ -49,7 +49,8 @@
         }
     },
     "generalError": {
-        "noUserFound": "No user found"
+        "noUserFound": "No user found",
+        "noUserLoggedIn": "User is not logged in"
     },
     "loginView": {
         "form": {
@@ -206,6 +207,117 @@
                 "firstLine": "The password has been changed!",
                 "secondLine": "If you were not the one who did it, please contact us as soon as possible by replying to this email.",
                 "thirdLine": "All the best"
+            }
+        }
+    },
+    "indexView": {
+        "form": {
+            "login": "Login",
+            "signup": "Signup"
+        },
+        "text": {
+            "firstH1": {
+                "title": "What is a strong password?",
+                "firstLine": "A strong password is one that is composed of a set of uppercase and lowercase characters, symbols and numbers, with a long length.",
+                "secondLine": "Currently, the recommended length is 12 characters, as many websites, such as Google or Amazon, claim that 8 characters with current technology can be guessed in a relatively short period of time."
+            },
+            "secondH1": {
+                "title": "Why should you have one?",
+                "firstLine": "Having a strong password helps protect your account from malicious attacks.",
+                "secondLine": "In addition, intrusion or theft of digital identity will be avoided, 'spam' or other problems of access to data by third parties will be avoided."
+            },
+            "thirdH1": {
+                "title": "Examples of insecure passwords",
+                "ul": {
+                    "title": "Some typical and easy-to-guess passwords can be the following:",
+                    "li": {
+                        "first": "Passwords that you have used before.",
+                        "second": "Passwords that contain any personal data of yours such as your name, surname, age...",
+                        "third": "Passwords with just common letters or words, for example 'dontenter'.",
+                        "fourth": "Passwords without symbols or proper length, for example 'pass12345'."
+                    }
+                }
+            },
+            "fourthH1": {
+                "title": "Why use this application?",
+                "firstLine": "This application is specialized in generating and storing strong passwords, although you can also create less secure passwords.",
+                "secondLine": "Generated passwords are created from certain data that you enter manually and can only be regenerated if said data is entered correctly.",
+                "thirdLine": "For our part, in our database we will not save any password, making it even more difficult for anyone except you to generate or obtain it."
+            }
+        }
+    },
+    "menuView": {
+        "form": {
+            "generator": "Generate password",
+            "saved": "Saved passwords"
+        },
+        "text": {
+            "firstH1": {
+                "title": "What is a strong password?",
+                "firstLine": "A strong password is one that is composed of a set of uppercase and lowercase characters, symbols and numbers, with a long length.",
+                "secondLine": "Currently, the recommended length is 12 characters, as many websites, such as Google or Amazon, claim that 8 characters with current technology can be guessed in a relatively short period of time."
+            },
+            "secondH1": {
+                "title": "Why should you have one?",
+                "firstLine": "Having a strong password helps protect your account from malicious attacks.",
+                "secondLine": "In addition, intrusion or theft of digital identity will be avoided, 'spam' or other problems of access to data by third parties will be avoided."
+            },
+            "thirdH1": {
+                "title": "Examples of insecure passwords",
+                "ul": {
+                    "title": "Some typical and easy-to-guess passwords can be the following:",
+                    "li": {
+                        "first": "Passwords that you have used before.",
+                        "second": "Passwords that contain any personal data of yours such as your name, surname, age...",
+                        "third": "Passwords with just common letters or words, for example 'dontenter'.",
+                        "fourth": "Passwords without symbols or proper length, for example 'pass12345'."
+                    }
+                }
+            },
+            "fourthH1": {
+                "title": "Why use this application?",
+                "firstLine": "This application is specialized in generating and storing strong passwords, although you can also create less secure passwords.",
+                "secondLine": "Generated passwords are created from certain data that you enter manually and can only be regenerated if said data is entered correctly.",
+                "thirdLine": "For our part, in our database we will not save any password, making it even more difficult for anyone except you to generate or obtain it."
+            }
+        }
+    },
+    "403View": {
+        "form": {
+            "index": "Back home",
+            "menu": "Back menu"
+        },
+        "text": {
+            "h1": {
+                "error": "403",
+                "title": "FORBIDDEN",
+                "firstLine": "You don't have permission to access / on this server."
+            }
+        }
+    },
+    "404View": {
+        "form": {
+            "index": "Back home",
+            "menu": "Back menu"
+        },
+        "text": {
+            "h1": {
+                "error": "404",
+                "title": "NOT FOUND",
+                "firstLine": "The resource requested could not be found on this server."
+            }
+        }
+    },
+    "500View": {
+        "form": {
+            "index": "Back home",
+            "menu": "Back menu"
+        },
+        "text": {
+            "h1": {
+                "error": "500",
+                "title": "INTERNAL SERVER ERROR",
+                "firstLine": "An internal server error has occured."
             }
         }
     }

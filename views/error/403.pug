@@ -1,9 +1,10 @@
 extends ../layouts/main-layout.pug
 
 block styles 
-    // link(rel="stylesheet", href="/css/product.css")
+    link(rel="stylesheet", href="/css/error.css")
 
 block content 
     main
-        div Estoy en 403
+        div.centered
+            include ../layouts/error.pug
 block scripts 

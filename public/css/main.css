@@ -181,6 +181,18 @@ form {
     visibility: hidden;
 }
 
+.index-button {
+    padding: 0.75rem 1.5rem;
+    font-size: large;
+    font-weight: bold;
+    border: 2px solid #009159;
+    color: #009159;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+}
+
 .user-message {
     margin: auto;
     font-weight: bold;
@@ -197,6 +209,27 @@ form {
     border-color: red;
     background: rgb(255, 176, 176);
     color: red;
+}
+
+.text {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.ul-text {
+    font-size: medium;
+    font-weight: bold;
+    list-style-type: none;
+    margin-top: 1rem;
+    padding: 0;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.li-text {
+    font-size: inherit;
+    font-weight: inherit;
+    margin-top: 1rem;
 }
 
 @media (min-width: 800px) {

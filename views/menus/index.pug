@@ -1,9 +1,14 @@
 extends ../layouts/main-layout.pug
 
-block styles 
-    // link(rel="stylesheet", href="/css/product.css")
+block styles
 
 block content 
     main
-        div Estoy en el index
+        include ../layouts/message-popup.pug  
+        div.centered
+            include ../layouts/index-menu-text.pug
+            form(action="/login", method="GET") 
+                button.btn.index-button(type="submit") #{indexNames.form.login}
+            form(action="/signup", method="GET") 
+                button.btn.index-button(type="submit") #{indexNames.form.signup}
 block scripts 

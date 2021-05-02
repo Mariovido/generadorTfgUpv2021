@@ -6,10 +6,7 @@ block styles
 
 block content 
     main
-        if errorMessage 
-            div.user-message.user-message--error #{errorMessage}
-        if message 
-            div.user-message.user-message #{message}
+        include ../layouts/message-popup.pug 
         div.centered
             p #{confirmNames.text.firstLine.first}#{email}#{confirmNames.text.firstLine.second}
             p #{confirmNames.text.secondLine}
