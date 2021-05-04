@@ -51,6 +51,7 @@ app.set('views', 'views');
 // ROUTES DECLARATIONS
 const menusRoutes = require('./routes/menus');
 const authRoutes = require('./routes/auth');
+const generatorRoutes = require('./routes/generator');
 const accountRoutes = require('./routes/account');
 const errorRoutes = require('./routes/error');
 
@@ -120,6 +121,7 @@ app.use(async (req, res, next) => {
 // ROUTES
 app.use(menusRoutes);
 app.use(authRoutes);
+app.use('/generator', generatorRoutes);
 app.use('/account', accountRoutes);
 
 // ERROR ROUTES

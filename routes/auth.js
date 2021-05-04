@@ -6,6 +6,7 @@ const {check, body} = require('express-validator');
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 const authController = require('../controllers/auth');
+const isNotAuth = require('../middleware/is-not-auth');
 const User = require('../models/user');
 
 // INITIALIZATION
@@ -13,7 +14,7 @@ const router = express.Router();
 const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 // ROUTES ..
-router.get('/login', authController.getLogin);
+router.get('/login', isNotAuth, authController.getLogin);
 router.post(
     '/login',
     [
@@ -30,9 +31,10 @@ router.post(
             .matches(regex)
             .trim()
     ], 
+    isNotAuth,
     authController.postLogin
 );
-router.get('/signup', authController.getSignup);
+router.get('/signup', isNotAuth, authController.getSignup);
 router.post(
     '/signup', 
     [
@@ -78,10 +80,11 @@ router.post(
                 return true;
             })
     ],
+    isNotAuth,
     authController.postSignup
 );
-router.get('/confirm/:token', authController.getConfirm);
-router.get('/reset-password', authController.getResetPassword);
+router.get('/confirm/:token', isNotAuth, authController.getConfirm);
+router.get('/reset-password', isNotAuth, authController.getResetPassword);
 router.post(
     '/reset-password', 
     [
@@ -101,9 +104,10 @@ router.post(
             })
             .trim()
     ],
+    isNotAuth,
     authController.postResetPassword
 );
-router.get('/new-password/:token', authController.getNewPassword);
+router.get('/new-password/:token', isNotAuth, authController.getNewPassword);
 router.post(
     '/new-password', 
     [
@@ -121,8 +125,9 @@ router.post(
                 return true;
             })
     ],
+    isNotAuth,
     authController.postNewPassword
 );
-router.post('/logout', authController.postLogout);
+router.post('/logout', isNotAuth, authController.postLogout);
 
 module.exports = router;

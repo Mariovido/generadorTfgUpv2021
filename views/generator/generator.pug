@@ -1,0 +1,51 @@
+extends ../layouts/main-layout.pug
+
+block styles 
+    link(rel="stylesheet", href="/css/generator.css")
+
+block content 
+    main
+        include ../layouts/message-popup.pug 
+        div.centered
+            form.generator-form(action="/generator", method="POST")
+                div.generator-form__wrapper
+                    div.generator-form-input__wrapper
+                        label.generator-form-range__label(for="namePass") #{generatorNames.form.namePass}
+                            input.generator-form-textarea(type="text", name="namePass", value=oldInput.namePass)#namePass
+                    div.generator-form-input__wrapper
+                        label.generator-form-range__label(for="length") #{generatorNames.form.length}
+                        div.generator-form-range__inner 
+                            input.generator-form-range__number(type="number", min="8", max="32", step="1", name="length", value=oldInput.length)#lengthNumber
+                            input.generator-form-range__slider(type="range", min="8", max="32", name="length", value=oldInput.length)#lengthSlider
+                    div.generator-form-input__wrapper
+                        div.generator-form-wrapper-radio
+                            input.generator-form-radio(type="radio", name="difficulty", value=oldInput.difficulty.difficultyEasy)#difficultyEasy
+                            label.generator-form-radio__label(for="difficultyEasy") #{generatorNames.form.difficulty.difficultyEasy}
+                        div.generator-form-wrapper-radio
+                            input.generator-form-radio(type="radio", name="difficulty", value=oldInput.difficulty.difficultyMedium, checked="true")#difficultyMedium 
+                            label.generator-form-radio__label(for="difficultyMedium") #{generatorNames.form.difficulty.difficultyMedium} 
+                        div.generator-form-wrapper-radio
+                            input.generator-form-radio(type="radio", name="difficulty", value=oldInput.difficulty.difficultyHard)#difficultyHard
+                            label.generator-form-radio__label(for="difficultyHard") #{generatorNames.form.difficulty.difficultyHard}
+                div.generator-form__wrapper
+                    div.generator-form-input__wrapper-names
+                        label.generator-form-range__label(for="data1Name") #{generatorNames.form.data1.data1Name}
+                            input.generator-form-textarea(type="text", name="data1Name", value=oldInput.data1.data1Name)#data1Name 
+                        label.generator-form-range__label(for="data1Value") #{generatorNames.form.data1.data1Value}
+                            input.generator-form-textarea(type="text", name="data1Value", value=oldInput.data1.data1Value)#data1Value
+                    div.generator-form-input__wrapper-names
+                        label.generator-form-range__label(for="data2Name") #{generatorNames.form.data2.data2Name}
+                            input.generator-form-textarea(type="text", name="data2Name", value=oldInput.data2.data2Name)#data2Name 
+                        label.generator-form-range__label(for="data2Value") #{generatorNames.form.data2.data2Value}
+                            input.generator-form-textarea(type="text", name="data2Value", value=oldInput.data2.dataValue)#data2Value
+                    div.generator-form-input__wrapper-names
+                        label.generator-form-range__label(for="data3Name") #{generatorNames.form.data3.data3Name} 
+                            input.generator-form-textarea(type="text", name="data3Name", value=oldInput.data3.data3Name)#data3Name 
+                        label.generator-form-range__label(for="data3Value") #{generatorNames.form.data3.data3Value}
+                            input.generator-form-textarea(type="text", name="data3Value", value=oldInput.data3.data3Value)#data3Value
+                input(type="hidden", name="_csrf", value=csrfToken)
+                if isConfirm
+                    div.centered 
+                        button.btn.generate-button(type="submit")#generator #{generatorNames.form.generator}
+block scripts 
+    script(src="/js/slider.js")

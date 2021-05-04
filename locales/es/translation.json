@@ -50,7 +50,11 @@
     },
     "generalError": {
         "noUserFound": "No se ha encontrado un usuario",
-        "noUserLoggedIn": "El usuario no está conectado"
+        "noUserLoggedIn": "El usuario no está conectado",
+        "userLoggedIn": "El usuario está conectado, pero no puede acceder a dicho recurso"
+    },
+    "generalInfo": {
+        "noConfirm": "Confirme su correo para poder generar una contraseña"
     },
     "loginView": {
         "form": {
@@ -319,6 +323,32 @@
                 "title": "INTERNAL SERVER ERROR",
                 "firstLine": "Ocurrió un error interno del servidor."
             }
+        }
+    },
+    "generatorView": {
+        "form": {
+            "namePass": "Nombre de la contraseña",
+            "length": "Longitud de la contraseña",
+            "difficulty": {
+                "difficultyEasy": "Contraseña fácil",
+                "difficultyMedium": "Contraseña normal",
+                "difficultyHard": "Contraseña fuerte"
+            },
+            "data1": {
+                "data1Name": "Nombre dato 1",
+                "data1Value": "Valor dato 1"
+            },
+            "data2": {
+                "data2Name": "Nombre dato 2",
+                "data2Value": "Valor dato 2"
+            },
+            "data3": {
+                "data3Name": "Nombre dato 3",
+                "data3Value": "Valor dato 3"
+            },
+            "generator": "Generar contraseña"
+        },
+        "validationErrors": {
         }
     }
 }
