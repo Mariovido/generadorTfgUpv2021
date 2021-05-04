@@ -7,6 +7,7 @@ const sinon = require('sinon');
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 const errorHandler = require('../middleware/errorHandler');
 const isAuth = require('../middleware/is-auth');
+const isNotAuth = require('../middleware/is-not-auth');
 
 // INITIALIZATION
 
@@ -117,7 +118,7 @@ describe('MIDDLEWARE TEST', function() {
                 .be
                 .true;
         });
-        it('should return the error if it is not logged in', async function() {
+        it('should return false if it is not logged in', async function() {
             const req = {
                 session: {
                     isLoggedIn: false
@@ -142,6 +143,70 @@ describe('MIDDLEWARE TEST', function() {
                 return true;
             };
             const auth = isAuth(req, res, next);
+            expect(auth)
+                .to
+                .be
+                .false;
+        });
+    });
+
+    
+    describe('is-auth.js', function() {
+        it('should return true if it is logged in', async function() {
+            const req = {
+                session: {
+                    isLoggedIn: false
+                },
+                t: function(message) {
+                    return message;
+                }
+            };
+            const res = {
+                status: function() {
+                    return this;
+                },
+                render: function() {
+                    return this;
+                },
+                session: undefined
+            };
+            const next = function(err) {
+                if (err) {
+                    return err;
+                }
+                return true;
+            };
+            const auth = isNotAuth(req, res, next);
+            expect(auth)
+                .to
+                .be
+                .true;
+        });
+        it('should return the false if it is not logged in', async function() {
+            const req = {
+                session: {
+                    isLoggedIn: true
+                },
+                t: function(message) {
+                    return message;
+                }
+            };
+            const res = {
+                status: function() {
+                    return this;
+                },
+                render: function() {
+                    return this;
+                },
+                session: undefined
+            };
+            const next = function(err) {
+                if (err) {
+                    return false;
+                }
+                return true;
+            };
+            const auth = isNotAuth(req, res, next);
             expect(auth)
                 .to
                 .be

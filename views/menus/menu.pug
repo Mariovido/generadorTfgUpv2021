@@ -7,7 +7,7 @@ block content
         include ../layouts/message-popup.pug  
         div.centered
             include ../layouts/index-menu-text.pug
-            form(action="", method="GET") 
+            form(action="/generator", method="GET") 
                 button.btn.index-button(type="submit") #{menuNames.form.generator}
             form(action="", method="GET") 
                 button.btn.index-button(type="submit") #{menuNames.form.saved}
