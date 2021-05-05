@@ -11,7 +11,7 @@ block content
                 div.generator-form__wrapper
                     div.generator-form-input__wrapper
                         label.generator-form-range__label(for="namePass") #{generatorNames.form.namePass}
-                            input.generator-form-textarea(type="text", name="namePass", value=oldInput.namePass)#namePass
+                            input(class=validationErrors.find(e => e.param === 'namePass') ? 'generator-form-textarea invalid' : 'generator-form-textarea', type="text", name="namePass", value=oldInput.namePass)#namePass
                     div.generator-form-input__wrapper
                         label.generator-form-range__label(for="length") #{generatorNames.form.length}
                         div.generator-form-range__inner 
@@ -30,19 +30,19 @@ block content
                 div.generator-form__wrapper
                     div.generator-form-input__wrapper-names
                         label.generator-form-range__label(for="data1Name") #{generatorNames.form.data1.data1Name}
-                            input.generator-form-textarea(type="text", name="data1Name", value=oldInput.data1.data1Name)#data1Name 
+                            input(class=validationErrors.find(e => e.param === 'data1Name') ? 'generator-form-textarea invalid' : 'generator-form-textarea', type="text", name="data1Name", value=oldInput.data1.data1Name)#data1Name 
                         label.generator-form-range__label(for="data1Value") #{generatorNames.form.data1.data1Value}
-                            input.generator-form-textarea(type="text", name="data1Value", value=oldInput.data1.data1Value)#data1Value
+                            input(class=validationErrors.find(e => e.param === 'data1Value') ? 'generator-form-textarea invalid' : 'generator-form-textarea', type="text", name="data1Value", value=oldInput.data1.data1Value)#data1Value
                     div.generator-form-input__wrapper-names
                         label.generator-form-range__label(for="data2Name") #{generatorNames.form.data2.data2Name}
-                            input.generator-form-textarea(type="text", name="data2Name", value=oldInput.data2.data2Name)#data2Name 
+                            input(class=validationErrors.find(e => e.param === 'data2Name') ? 'generator-form-textarea invalid' : 'generator-form-textarea', type="text", name="data2Name", value=oldInput.data2.data2Name)#data2Name 
                         label.generator-form-range__label(for="data2Value") #{generatorNames.form.data2.data2Value}
-                            input.generator-form-textarea(type="text", name="data2Value", value=oldInput.data2.dataValue)#data2Value
+                            input(class=validationErrors.find(e => e.param === 'data2Value') ? 'generator-form-textarea invalid' : 'generator-form-textarea', type="text", name="data2Value", value=oldInput.data2.data2Value)#data2Value
                     div.generator-form-input__wrapper-names
                         label.generator-form-range__label(for="data3Name") #{generatorNames.form.data3.data3Name} 
-                            input.generator-form-textarea(type="text", name="data3Name", value=oldInput.data3.data3Name)#data3Name 
+                            input(class=validationErrors.find(e => e.param === 'data3Name') ? 'generator-form-textarea invalid' : 'generator-form-textarea', type="text", name="data3Name", value=oldInput.data3.data3Name)#data3Name 
                         label.generator-form-range__label(for="data3Value") #{generatorNames.form.data3.data3Value}
-                            input.generator-form-textarea(type="text", name="data3Value", value=oldInput.data3.data3Value)#data3Value
+                            input(class=validationErrors.find(e => e.param === 'data3Value') ? 'generator-form-textarea invalid' : 'generator-form-textarea', type="text", name="data3Value", value=oldInput.data3.data3Value)#data3Value
                 input(type="hidden", name="_csrf", value=csrfToken)
                 if isConfirm
                     div.centered 

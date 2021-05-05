@@ -6,12 +6,19 @@ const Schema = mongoose.Schema;
 
 // SCHEMA
 const passwordSchema = new Schema({
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+    passwordName: {
+        type: String,
         required: true
     },
-    passwordName: {
+    passwordHash: {
+        type: String,
+        required: true
+    },
+    length: {
+        type: Number,
+        required: true
+    },
+    difficulty: {
         type: String,
         required: true
     },

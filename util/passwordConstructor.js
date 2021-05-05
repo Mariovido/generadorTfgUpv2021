@@ -9,7 +9,7 @@ const stepUtil = require('./step');
 // INITIALIZATION
 
 // EXPORTS
-module.exports = async (hashedData, data, length, difficulty) => { // TODO - Hacer distintas dificultades
+module.exports = async (hashedData, data, length, difficulty, next) => { // TODO - Hacer distintas dificultades
     try {
         const steps = stepUtil(data, length);
         const finalStep = steps.finalStep;

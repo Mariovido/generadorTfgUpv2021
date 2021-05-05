@@ -42,6 +42,7 @@
         },
         "generatorTitle": "Generador",
         "savedTitle": "Contraseñas",
+        "showPasswordTitle": "Contraseña",
         "errorsTitle": {
             "403": "403",
             "404": "404",
@@ -108,13 +109,13 @@
         "changePassword": "Cambiar contraseña",
         "validationErrors": {
             "alias": "Introduzca un alias que solo contenga números y letras",
-            "aliasLength": "El alias debe tener un mínimo de 4 carácteres y un máximo de 12 carácters",
+            "aliasLength": "El alias debe tener un mínimo de 4 carácteres y un máximo de 12 carácteres",
             "name": "Introduzca un nombre que solo contenga letras",
-            "nameLength": "El nombre debe tener un mínimo de 4 carácteres y un máximo de 12 carácters",
+            "nameLength": "El nombre debe tener un mínimo de 4 carácteres y un máximo de 12 carácteres",
             "age": "Introduzca una edad correcta",
-            "ageRange": "Age must be between 1 and 100",
+            "ageRange": "La edad tiene que estar entre 1 y 100",
             "city": "Introduzca una ciudad que solo contenga letras",
-            "cityLength": "La ciudad debe tener un mínimo de 4 carácteres y un máximo de 30 carácters"
+            "cityLength": "La ciudad debe tener un mínimo de 4 carácteres y un máximo de 30 carácteres"
         }
     },
     "resetPasswordView": {
@@ -348,7 +349,26 @@
             },
             "generator": "Generar contraseña"
         },
+        "noData": "No se ha encontrado ningún dato",
         "validationErrors": {
+            "namePass": "Introduzca un nombre de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "length": "Introduzca una longitud correcta",
+            "lengthRange": "La longitud tiene que estar entre 8 y 32",
+            "difficulty": "Introduzca una dificultad adecuada",
+            "dataName": "Introduzca un nombre de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "dataValue": "Introduzca un valor de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "dataEmpty": "Debe introducir los datos en orden"
+        }
+    },
+    "showPasswordView": {
+        "form": {
+            "generate": "Generar otra contraseña",
+            "saved": "Contraseñas guardadas"
+        },
+        "textPrePassword": "La contraseña generada es:",
+        "text": {
+            "firstLine": "Recuerde que solo podrá ver la contraseña en este momento.",
+            "secondLine": "Si quisiera volverla a ver, tendría que introducir los datos de nuevo."
         }
     }
 }

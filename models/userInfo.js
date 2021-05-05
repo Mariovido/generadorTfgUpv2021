@@ -15,7 +15,7 @@ const userInfoSchema = new Schema({
         required: false
     },
     userAge: {
-        type: String,
+        type: Number,
         required: false
     },
     userCity: {
