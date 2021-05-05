@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 const User = require('../models/user');
+const Password = require('../models/password');
+const Hint = require('../models/hint');
 const errorThrow = require('../util/error');
 const errorMessage = require('../util/errorMessage');
 const infoMessage = require('../util/infoMessage');
@@ -81,7 +83,7 @@ exports.postGenerator = async (req, res, next) => {
 
     try {
         const user = await User
-        .findById(req.user._id)
+            .findById(req.user._id)
         if (!user) {
             return errorThrow(req.t('generalError.noUserFound'), 403, next);
         }
@@ -127,28 +129,72 @@ exports.postGenerator = async (req, res, next) => {
         }
         let datos = [];
         if (data1Value) {
-            datos.push(data1Value);
-        } else if (data2Value) {
-            datos.push(data2Value);
-        } else if (data3Value) {
-            datos.push(data3Value);
+            datos.push({
+                dataName: data1Name,
+                dataValue: data1Value
+            });
         }
-        if (!datos) {
-            return errorThrow(req.t(''), 500, next); // TODO - Crear texto
+        if (data1Value && data2Value) {
+            datos.push({
+                dataName: data2Name,
+                dataValue: data2Value
+            });
         }
-        const data = await dataConstructor(
+        if (data1Value && data2Value && data3Value) {
+            datos.push({
+                dataName: data3Name,
+                dataValue: data3Value
+            });
+        }
+        if (datos.length < 1) {
+            return errorThrow(req.t('generatorView.noData'), 500, next);
+        }
+
+        const hintsMix = await dataConstructor(
             email, 
             namePass, 
             datos,
-            length
+            length,
+            next
         );
-        const hashedData = await bcrypt.hash(data, 2); // TODO - GUARDAR DATA TOTAL HASHED.
-        const password = await passwordConstructor(hashedData, datos, length, difficulty);
+        const hints = hintsMix.hints;
+        const hashedData = await bcrypt.hash(hintsMix.finalMix, 2);
+        const mixHint = new Hint({
+            hintName: '@Mix@',
+            hintValue: hintsMix.finalMix,
+            hintHash: hashedData,
+            isIntroducedByUser: false
+        });
+        const mixHintSaved = await mixHint.save();
+        hints.push(mixHintSaved);
+
+        const password = await passwordConstructor(hashedData, datos, length, difficulty, next);
         const hashedPassword = await bcrypt.hash(password, 12);
+        const passwordDatabase = new Password({
+            passwordName: namePass,
+            passwordHash: hashedPassword,
+            length: length,
+            difficulty: difficulty,
+            hints: hints
+        });
+        const passwordDatabaseSaved = await passwordDatabase.save();
+
+        user.userPasswords.push(passwordDatabaseSaved);
+        await user.save();
+
         return res
             .status(201)
-            .redirect('/menu'); // FIXME - CAMBIAR A STORAGE
+            .render('generator/show-password', {
+                path: '/show-password',
+                pageTitle: req.t('pageTitles.showPasswordTitle'),
+                navNames: req.t('nav'),
+                showPasswordNames: req.t('showPasswordView'),
+                errorMessage: null,
+                validationErrors: [],
+                message: message,
+                password: password
+            });
     } catch (err) {
-        errorThrow(err, 500, next);
+        return errorThrow(err, 500, next);
     }
 };

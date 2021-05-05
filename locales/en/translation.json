@@ -42,6 +42,7 @@
         },
         "generatorTitle": "Generator",
         "savedTitle": "Passwords",
+        "showPasswordTitle": "Password",
         "errorsTitle": {
             "403": "403",
             "404": "404",
@@ -112,7 +113,7 @@
             "name": "Enter a name that only contains letters",
             "nameLength": "The name must have a minimum of 4 characters and a maximum of 12 characters",
             "age": "Enter a correct age",
-            "ageRange": "La edad tiene que estar entre 1 y 100",
+            "ageRange": "Age must be between 1 and 100",
             "city": "Enter a city that only contains letters",
             "cityLength": "The city must have a minimum of 4 characters and a maximum of 30 characters"
         }
@@ -348,7 +349,26 @@
             },
             "generator": "Generate password"
         },
+        "noData": "No data found",
         "validationErrors": {
+            "namePass": "Enter a data name that only contains numbers and letters and is 4 to 30 characters long",
+            "length": "Enter a correct length",
+            "lengthRange": "Length must be between 8 and 32",
+            "difficulty": "Enter a correct difficulty",
+            "dataName": "Enter a data name that only contains numbers and letters and is 4 to 30 characters long",
+            "dataValue": "Enter a data value that only contains numbers and letters and is 4 to 30 characters long",
+            "dataEmpty": "You must enter the data in order"
+        }
+    },
+    "showPasswordView": {
+        "form": {
+            "generate": "Generate another password",
+            "saved": "Saved passwords"
+        },
+        "textPrePassword": "The generated password is:",
+        "text": {
+            "firstLine": "Remember that you will only be able to see the password at this time.",
+            "secondLine": "If you wanted to see it again, you would have to enter the data again."
         }
     }
 }

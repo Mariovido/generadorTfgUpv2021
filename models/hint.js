@@ -6,18 +6,21 @@ const Schema = mongoose.Schema;
 
 // SCHEMA
 const hintSchema = new Schema({
-    passwordId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Password',
-        required: true
-    },
     hintName: {
         type: String,
         required: true
     },
     hintValue: {
         type: String,
-        required: false
+        required: true
+    },
+    hintHash: {
+        type: String,
+        required: true
+    },
+    isIntroducedByUser: {
+        type: Boolean,
+        required: true
     }
 });
 

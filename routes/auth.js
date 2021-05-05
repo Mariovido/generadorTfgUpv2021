@@ -11,7 +11,7 @@ const User = require('../models/user');
 
 // INITIALIZATION
 const router = express.Router();
-const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+const regex = /^(?=.*[A-Za-z\u00f1\u00d1])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\u00f1\u00d1\d@$!%*#?&]{8,}$/;
 
 // ROUTES ..
 router.get('/login', isNotAuth, authController.getLogin);

@@ -35,7 +35,14 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'UserInfo',
         required: true
-    }
+    },
+    userPasswords: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Password',
+            required: false
+        }
+    ]
 });
 
 // EXPORTS

@@ -11,8 +11,8 @@ const isAuth = require('../middleware/is-auth');
 
 // INITIALIZATION
 const router = express.Router();
-const regexAlphaWithSpaces = /^(?=.*[A-Za-z])[A-Za-z\s]{1,}$/;
-const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+const regexAlphaWithSpaces = /^(?=.*[A-Za-z\u00f1\u00d1])[A-Za-z\u00f1\u00d1\s]{1,}$/;
+const regex = /^(?=.*[A-Za-z\u00f1\u00d1])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\u00f1\u00d1\d@$!%*#?&]{8,}$/;
 
 // ROUTES ../account
 router.get('/', isAuth, accountController.getAccount);
