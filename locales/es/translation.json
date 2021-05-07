@@ -43,6 +43,7 @@
         "generatorTitle": "Generador",
         "savedTitle": "Contraseñas",
         "showPasswordTitle": "Contraseña",
+        "recreatePasswordTitle": "Contraseña",
         "errorsTitle": {
             "403": "403",
             "404": "404",
@@ -52,7 +53,8 @@
     "generalError": {
         "noUserFound": "No se ha encontrado un usuario",
         "noUserLoggedIn": "El usuario no está conectado",
-        "userLoggedIn": "El usuario está conectado, pero no puede acceder a dicho recurso"
+        "userLoggedIn": "El usuario está conectado, pero no puede acceder a dicho recurso",
+        "serverError": "Error en el servidor"
     },
     "generalInfo": {
         "noConfirm": "Confirme su correo para poder generar una contraseña"
@@ -351,7 +353,8 @@
         },
         "noData": "No se ha encontrado ningún dato",
         "validationErrors": {
-            "namePass": "Introduzca un nombre de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "namePass": "Introduzca un nombre de contraseña que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "namePassExists": "El nombre de contraseña introducido ya existe, escoja otro",
             "length": "Introduzca una longitud correcta",
             "lengthRange": "La longitud tiene que estar entre 8 y 32",
             "difficulty": "Introduzca una dificultad adecuada",
@@ -366,9 +369,55 @@
             "saved": "Contraseñas guardadas"
         },
         "textPrePassword": "La contraseña generada es:",
+        "copy": {
+            "button": "Copiar",
+            "text": "¡Copiado!"
+        },
         "text": {
             "firstLine": "Recuerde que solo podrá ver la contraseña en este momento.",
             "secondLine": "Si quisiera volverla a ver, tendría que introducir los datos de nuevo."
+        }
+    },
+    "storageView": {
+        "form": {
+            "generate": "Generar contraseña",
+            "show": "Ver",
+            "delete": "Borrar"
+        },
+        "text": {
+            "firstLine": "¡No hay contraseñas para mostrar!",
+            "secondLine": "Intentelo de nuevo despues de generar una contraseña."
+        }
+    },
+    "recreatePasswordView": {
+        "text": "Rellena los campos que no están en amarillo para regenerar la contraseña",
+        "form": {
+            "namePass": "Nombre de la contraseña",
+            "length": "Longitud de la contraseña",
+            "difficulty": {
+                "difficultyEasy": "Contraseña fácil",
+                "difficultyMedium": "Contraseña normal",
+                "difficultyHard": "Contraseña fuerte"
+            },
+            "data1": {
+                "data1Name": "Nombre dato 1",
+                "data1Value": "Valor dato 1"
+            },
+            "data2": {
+                "data2Name": "Nombre dato 2",
+                "data2Value": "Valor dato 2"
+            },
+            "data3": {
+                "data3Name": "Nombre dato 3",
+                "data3Value": "Valor dato 3"
+            },
+            "recreator": "Recrear contraseña",
+            "back": "Volver"
+        },
+        "noData": "No se ha encontrado ningún dato",
+        "validationErrors": {
+            "dataValue": "Introduzca un valor de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "dataNotMatch": "El valor introducido es incorrecto"
         }
     }
 }

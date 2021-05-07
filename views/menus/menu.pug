@@ -9,7 +9,6 @@ block content
             include ../layouts/index-menu-text.pug
             form(action="/generator", method="GET") 
                 button.btn.index-button(type="submit") #{menuNames.form.generator}
-            //TODO - Cambiar el action por el de saved pass.
-            form(action="", method="GET") 
+            form(action="/storage", method="GET") 
                 button.btn.index-button(type="submit") #{menuNames.form.saved}
 block scripts 

@@ -12,7 +12,7 @@ const hintSchema = new Schema({
     },
     hintValue: {
         type: String,
-        required: true
+        required: false
     },
     hintHash: {
         type: String,

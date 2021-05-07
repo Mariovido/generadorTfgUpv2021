@@ -23,8 +23,7 @@ html(lang="en")
                         li.main-header__item
                             a(href="/generator", class=(path === '/generator') ? 'active' : '') #{navNames.auth.names.generator}
                         li.main-header__item
-                            //TODO - Cambiar el action por el de saved pass.
-                            a(href="", class=(path === '') ? 'active' : '') #{navNames.auth.names.saved}        
+                            a(href="/storage", class=(path === '/storage') ? 'active' : '') #{navNames.auth.names.saved}        
                 ul.main-header__item-list
                     if !isAuthenticated 
                         li.main-header__item
@@ -49,8 +48,7 @@ html(lang="en")
                         li.mobile-nav__item
                             a(href="/generator", class=(path === '/generator') ? 'active' : '') #{navNames.auth.names.generator}
                         li.mobile-nav__item
-                            //TODO - Cambiar el action por el de saved pass.
-                            a(href="", class=(path === '') ? 'active' : '') #{navNames.auth.names.saved}        
+                            a(href="/storage", class=(path === '/storage') ? 'active' : '') #{navNames.auth.names.saved}        
                 ul.mobile-nav__item-list
                     if !isAuthenticated 
                         li.mobile-nav__item

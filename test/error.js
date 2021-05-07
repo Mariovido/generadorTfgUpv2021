@@ -78,7 +78,7 @@ describe('CONTROLLERS TEST' , function() {
         return;
     });
 
-    describe('menus.js', function() {
+    describe('error.js', function() {
         describe('get403', function() {
             it('should return statusCode 403 and renderValue true', async function() {
                 const get403 = await ErrorController.get403(req, res, next);

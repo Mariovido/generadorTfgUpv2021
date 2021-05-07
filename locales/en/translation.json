@@ -43,6 +43,7 @@
         "generatorTitle": "Generator",
         "savedTitle": "Passwords",
         "showPasswordTitle": "Password",
+        "recreatePasswordTitle": "Password",
         "errorsTitle": {
             "403": "403",
             "404": "404",
@@ -52,7 +53,8 @@
     "generalError": {
         "noUserFound": "No user found",
         "noUserLoggedIn": "User is not logged in",
-        "userLoggedIn": "The user is logged in, but cannot access that resource"
+        "userLoggedIn": "The user is logged in, but cannot access that resource",
+        "serverError": "Server side error"
     },
     "generalInfo": {
         "noConfirm": "Confirm your email to be able to generate a password"
@@ -351,7 +353,8 @@
         },
         "noData": "No data found",
         "validationErrors": {
-            "namePass": "Enter a data name that only contains numbers and letters and is 4 to 30 characters long",
+            "namePass": "Enter a password name that only contains numbers and letters and is 4 to 30 characters long",
+            "namePassExists": "The password name entered already exists, choose another",
             "length": "Enter a correct length",
             "lengthRange": "Length must be between 8 and 32",
             "difficulty": "Enter a correct difficulty",
@@ -366,9 +369,55 @@
             "saved": "Saved passwords"
         },
         "textPrePassword": "The generated password is:",
+        "copy": {
+            "button": "Copy",
+            "text": "Copied!"
+        },
         "text": {
             "firstLine": "Remember that you will only be able to see the password at this time.",
             "secondLine": "If you wanted to see it again, you would have to enter the data again."
+        }
+    },
+    "storageView": {
+        "form": {
+            "generate": "Generate password",
+            "show": "Show",
+            "delete": "Delete"
+        },
+        "text": {
+            "firstLine": "There are no passwords to display!",
+            "secondLine": "Please try again after generating a password."
+        }
+    },
+    "recreatePasswordView": {
+        "text": "Fill in the fields that are not in yellow to regenerate the password",
+        "form": {
+            "namePass": "Password name",
+            "length": "Password length",
+            "difficulty": {
+                "difficultyEasy": "Easy password",
+                "difficultyMedium": "Normal password",
+                "difficultyHard": "Strong password"
+            },
+            "data1": {
+                "data1Name": "Data name 1",
+                "data1Value": "Data value 1"
+            },
+            "data2": {
+                "data2Name": "Data name 2",
+                "data2Value": "Data value 2"
+            },
+            "data3": {
+                "data3Name": "Data name 3",
+                "data3Value": "Data value 3"
+            },
+            "recreator": "Recreate password",
+            "back": "Back"
+        },
+        "noData": "No data found",
+        "validationErrors": {
+            "dataValue": "Enter a data value that only contains numbers and letters and is 4 to 30 characters long",
+            "dataNotMatch": "The entered value is incorrect"
         }
     }
 }

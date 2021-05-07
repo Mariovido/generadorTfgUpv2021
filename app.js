@@ -52,6 +52,7 @@ app.set('views', 'views');
 const menusRoutes = require('./routes/menus');
 const authRoutes = require('./routes/auth');
 const generatorRoutes = require('./routes/generator');
+const storageRoutes = require('./routes/storage');
 const accountRoutes = require('./routes/account');
 const errorRoutes = require('./routes/error');
 
@@ -122,6 +123,7 @@ app.use(async (req, res, next) => {
 app.use(menusRoutes);
 app.use(authRoutes);
 app.use('/generator', generatorRoutes);
+app.use('/storage', storageRoutes);
 app.use('/account', accountRoutes);
 
 // ERROR ROUTES

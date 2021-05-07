@@ -42,11 +42,10 @@ module.exports = async (email, namePass, data, length, next) => {
 
         const hashedData = [];
         for (const dato of data) {
-            const hashedDato = await bcrypt.hash(dato.dataValue, 2);
+            const hashedDato = await bcrypt.hash(dato.dataValue.toLowerCase(), 2);
             hashedData.push(hashedDato);
             const hintData = new Hint({
                 hintName: dato.dataName,
-                hintValue: dato.dataValue.toLowerCase(),
                 hintHash: hashedDato,
                 isIntroducedByUser: true
             });
