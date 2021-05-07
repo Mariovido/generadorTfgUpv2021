@@ -5,6 +5,8 @@ const express = require('express');
 const {check, body} = require('express-validator');
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
+const User = require('../models/user');
+const Password = require('../models/password');
 const generatorController = require('../controllers/generator');
 const isAuth = require('../middleware/is-auth');
 
@@ -16,7 +18,6 @@ let data1Value = false;
 let data2Name = false;
 let data2Value = false;
 let data3Name = false;
-let data3Value = true;
 
 // ROUTES ../generator
 router.get('/', isAuth, generatorController.getGenerator);
@@ -27,19 +28,24 @@ router.post(
             .matches(regex, 'i')
             .withMessage((value, {req}) => {
                 return req.t('generatorView.validationErrors.namePass');
+            })
+            .custom(async (value, {req}) => {
+                const user = await User
+                    .findById({
+                        _id: req.user._id
+                    })
+                const password = await Password
+                    .find({
+                        _id: {
+                            $in: user.userPasswords
+                        },
+                        passwordName: value
+                    });
+                if (password.length > 0) {
+                    return Promise.reject(req.t('generatorView.validationErrors.namePassExists'));
+                }
+                return true;
             }),
-            // .isAlphanumeric()
-            // .withMessage((value, {req}) => {
-            //     return req.t('generatorView.validationErrors.namePass');
-            // })
-            // .isLength({
-            //     min: 4,
-            //     max: 12
-            // })
-            // .withMessage((value, {req}) => {
-            //     return req.t('generatorView.validationErrors.namePassLength');
-            // })
-            // .trim(),
         body('length')
             .isInt()
             .withMessage((value, {req}) => {
@@ -68,49 +74,19 @@ router.post(
             .withMessage((value, {req}) => {
                 return req.t('generatorView.validationErrors.dataName');
             })
-            // .isAlphanumeric()
-            // .withMessage((value, {req}) => {
-            //     data1Name = false;
-            //     return req.t('generatorView.validationErrors.dataName');
-            // })
-            // .isLength({
-            //     min: 4,
-            //     max: 16
-            // })
-            // .withMessage((value, {req}) => {
-            //     data1Name = false;
-            //     return req.t('generatorView.validationErrors.dataName');
-            // })
             .custom((value, {req}) => {
                 data1Name = true;
                 return true;
             }),
-            // .trim(),
         body('data1Value')
             .matches(regex, 'i')
             .withMessage((value, {req}) => {
                 return req.t('generatorView.validationErrors.dataValue');
             })
-            // .isAlphanumeric()
-            // .withMessage((value, {req}) => {
-            //     data1Name = false;
-            //     data1Value = false;
-            //     return req.t('generatorView.validationErrors.dataValue');
-            // })
-            // .isLength({
-            //     min: 4,
-            //     max: 16
-            // })
-            // .withMessage((value, {req}) => {
-            //     data1Name = false;
-            //     data1Value = false;
-            //     return req.t('generatorView.validationErrors.dataValue');
-            // })
             .custom((value, {req}) => {
                 data1Value = true;
                 return true;
             }),
-            // .trim(),
         body('data2Name')
             .custom((value, {req}) => {
                 if (value === '') {

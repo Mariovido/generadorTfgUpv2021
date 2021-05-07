@@ -1,0 +1,28 @@
+extends ../layouts/main-layout.pug
+
+block styles 
+    link(rel="stylesheet", href="/css/storage.css")
+
+block content 
+    main
+        include ../layouts/message-popup.pug  
+        div.centered 
+            if passwords.length <= 0
+                h1 #{storageNames.text.firstLine}
+                h1 #{storageNames.text.secondLine}
+                form(action="/generator", method="GET")
+                    button.btn.index-button(type="submit") #{storageNames.form.generate}
+            else 
+                div.storage-list
+                    div.storage-form__wrapper
+                        each password in passwords 
+                            div.storage-form-input__wrapper
+                                h2.storage-form-input__text #{password.passwordName}
+                                form(action="/storage/recreate/" + password._id, method="GET")
+                                    button.btn.btn-storage(type="submit") #{storageNames.form.show}
+                                form(action="/storage", method="POST")
+                                    input(type="hidden", name="_csrf", value=csrfToken)
+                                    input(type="hidden", name="passwordId", value=password._id)
+                                    button.btn.btn-storage(type="submit") #{storageNames.form.delete}
+                include ../layouts/pagination.pug
+block scripts 

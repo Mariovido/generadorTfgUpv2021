@@ -8,6 +8,11 @@
     flex-wrap: wrap;
 }
 
+.generator-form input:disabled {
+    font-weight: bold;
+    background-color: rgba(250, 220, 86, 0.329);
+}
+
 .generator-form label{
     font-size: 1rem
 }
@@ -278,6 +283,67 @@
     font: inherit;
     position: relative;
     top: 5px;
+}
+
+.btn-copy {
+    border: 2px solid #009159;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 0.75rem;
+    margin-right: 0.25rem;
+    color: #009159;
+    font-weight: bold;
+    height: 2.5rem;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    height: 50%;
+    width: 50%;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #11c27e;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #009159 transparent transparent transparent;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }
 
 @media (min-width: 800px) {

@@ -185,7 +185,7 @@ exports.postGenerator = async (req, res, next) => {
         return res
             .status(201)
             .render('generator/show-password', {
-                path: '/show-password',
+                path: '/generator/show-password',
                 pageTitle: req.t('pageTitles.showPasswordTitle'),
                 navNames: req.t('nav'),
                 showPasswordNames: req.t('showPasswordView'),
