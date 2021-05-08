@@ -149,10 +149,9 @@ describe('MIDDLEWARE TEST', function() {
                 .false;
         });
     });
-
     
-    describe('is-auth.js', function() {
-        it('should return true if it is logged in', async function() {
+    describe('is-not-auth.js', function() {
+        it('should return true if it is not logged in', async function() {
             const req = {
                 session: {
                     isLoggedIn: false
@@ -176,13 +175,13 @@ describe('MIDDLEWARE TEST', function() {
                 }
                 return true;
             };
-            const auth = isNotAuth(req, res, next);
-            expect(auth)
+            const notAuth = isNotAuth(req, res, next);
+            expect(notAuth)
                 .to
                 .be
                 .true;
         });
-        it('should return the false if it is not logged in', async function() {
+        it('should return the false if it is logged in', async function() {
             const req = {
                 session: {
                     isLoggedIn: true
@@ -206,13 +205,11 @@ describe('MIDDLEWARE TEST', function() {
                 }
                 return true;
             };
-            const auth = isNotAuth(req, res, next);
-            expect(auth)
+            const notAuth = isNotAuth(req, res, next);
+            expect(notAuth)
                 .to
                 .be
                 .false;
         });
     });
-
-    // TODO - is-not-auth.js
 });

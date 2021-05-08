@@ -11,7 +11,6 @@ function copyToClipboard(text) {
     popup.classList.toggle("show");
 }
   
-//
 copy.addEventListener('click', function() {
-    copyToClipboard(document.getElementById('password').innerHTML);
+    copyToClipboard(document.getElementById('password').innerHTML.replace(/&amp;/g, '&'));
 });
