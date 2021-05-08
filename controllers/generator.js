@@ -161,7 +161,6 @@ exports.postGenerator = async (req, res, next) => {
         const hashedData = await bcrypt.hash(hintsMix.finalMix, 2);
         const mixHint = new Hint({
             hintName: '@Mix@',
-            hintValue: hintsMix.finalMix,
             hintHash: hashedData,
             isIntroducedByUser: false
         });

@@ -177,6 +177,7 @@ describe('CONTROLLERS TEST' , function() {
                 return;
             });
         });
+        
         describe('postSignup', function() {
             it('should return statusCode 200 and redirect true if the email and password is correct', async function() {
                 req.body = {

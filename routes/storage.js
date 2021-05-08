@@ -140,5 +140,6 @@ router.post(
     ], 
     isAuth, 
     storageController.postRecreate);
+router.post('/delete', isAuth, storageController.postDeletePassword);
 
 module.exports = router;

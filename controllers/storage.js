@@ -195,7 +195,7 @@ exports.postRecreate = async (req, res, next) => {
         const passwordRecreated = await passwordConstructor(mix[0].hintHash, datos, password.length, password.difficulty, next);
         const doMatch = await bcrypt.compare(passwordRecreated, password.passwordHash);
         if (!doMatch) {
-            return errorThrow(err, 500, next);
+            return errorThrow(req.t('generalError.serverError'), 500, next);
         }
         return res
             .status(200)
@@ -209,6 +209,37 @@ exports.postRecreate = async (req, res, next) => {
                 message: message,
                 password: passwordRecreated
             });
+    } catch (err) {
+        return errorThrow(err, 500, next);
+    }
+};
+
+exports.postDeletePassword = async(req, res, next) => {
+    const passwordId = req.body.passwordId;
+
+    try {
+        await User.updateOne(
+            {
+                _id: req.user._id
+            },
+            {
+                $pull: {
+                    'userPasswords': passwordId
+                }
+            }
+        );
+        const password = await Password.findById({
+            _id: passwordId
+        });
+        await Hint.deleteMany({
+            _id: {
+                $in: password.hints
+            }
+        });
+        await password.delete();
+        return res
+            .status(202)
+            .redirect('/storage');
     } catch (err) {
         return errorThrow(err, 500, next);
     }

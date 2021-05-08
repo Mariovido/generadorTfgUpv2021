@@ -20,7 +20,7 @@ block content
                                 h2.storage-form-input__text #{password.passwordName}
                                 form(action="/storage/recreate/" + password._id, method="GET")
                                     button.btn.btn-storage(type="submit") #{storageNames.form.show}
-                                form(action="/storage", method="POST")
+                                form(action="storage/delete", method="POST")
                                     input(type="hidden", name="_csrf", value=csrfToken)
                                     input(type="hidden", name="passwordId", value=password._id)
                                     button.btn.btn-storage(type="submit") #{storageNames.form.delete}

@@ -70,7 +70,7 @@ app.use(i18nextMiddleware.handle(i18next));
 
 // SESSION
 app.use(session({
-    secret: 'misecreto', // FIXME - Change the password for the sessions.
+    secret: 'aKOesRUuAOYDDbUiCJgbymeaKOesRUuA',
     resave: false,
     saveUninitialized: false,
     store: store
