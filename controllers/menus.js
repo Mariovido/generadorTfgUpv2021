@@ -51,3 +51,28 @@ exports.getMenu = async (req, res, next) => {
         return errorThrow(err, 500, next);
     }
 };
+
+exports.getGuide = async (req, res, next) => {
+    try {
+        const user = await User
+            .findById(req.user._id)
+        if (!user) {
+            return errorThrow(req.t('generalError.noUserFound'), 403, next);
+        }
+        const error = errorMessage(req);
+        const message = infoMessage(req);
+        return res
+            .status(200)
+            .render('menus/guide', {
+                path: '/guide',
+                pageTitle: req.t('pageTitles.menusTitles.guide'),
+                navNames: req.t('nav'),
+                guideNames: req.t('guideView'),
+                errorMessage: error,
+                validationErrors: [],
+                message: message
+            });
+    } catch (err) {
+        return errorThrow(err, 500, next);
+    }
+};

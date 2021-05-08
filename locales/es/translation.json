@@ -3,6 +3,7 @@
         "auth": {
             "names": {
                 "menu": "Menú",
+                "guide": "Guía",
                 "generator": "Generador de contraseñas",
                 "saved": "Contraseñas guardadas",
                 "account": "Mi cuenta",
@@ -38,7 +39,8 @@
         },
         "menusTitles": {
             "index": "Inicio",
-            "menu": "Menú"
+            "menu": "Menú",
+            "guide": "Guía"
         },
         "generatorTitle": "Generador",
         "savedTitle": "Contraseñas",
@@ -156,7 +158,7 @@
     },
     "confirmView": {
         "form": {
-            "backIndex": "Volver a Inicio"
+            "backMenu": "Volver a Menú"
         },
         "text": {
             "firstLine": {
@@ -361,6 +363,10 @@
             "dataName": "Introduzca un nombre de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
             "dataValue": "Introduzca un valor de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
             "dataEmpty": "Debe introducir los datos en orden"
+        },
+        "text": {
+            "h1": "Si no sabe cómo utilizarlo pulse ",
+            "a": "aquí"
         }
     },
     "showPasswordView": {
@@ -418,6 +424,61 @@
         "validationErrors": {
             "dataValue": "Introduzca un valor de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
             "dataNotMatch": "El valor introducido es incorrecto"
+        }
+    },
+    "guideView": {
+        "form": {
+            "generator": "Generar contraseña",
+            "saved": "Contraseñas guardadas"
+        },
+        "text": {
+            "img": "es",
+            "h1": {
+                "title": "Como generar una contraseña",
+                "text": "La generación de la contraseña cuenta con 4 campos:"
+            },
+            "firstH2": {
+                "title": "Nombre de la contraseña",
+                "firstLine": "En este campo tendrá que poner el título a su contraseña.",
+                "secondLine": "Tenga en cuenta que dos contraseñas distintas no pueden tener el mismo nombre."
+            },
+            "secondH2": {
+                "title": "Longitud de la contraseña",
+                "text": "En este campo tendrá que indicar la longitud de la contraseña."
+            },
+            "thirdH2": {
+                "title": "Dificultad de la contraseña",
+                "ul": {
+                    "title": "Aquí tendrá que elegir entre 3 opciones:",
+                    "firstLi": {
+                        "title": "Dificultad fácil",
+                        "text": "Dicha dificultad hará que la contraseña solo contenga letras mayúsculas y minúsculas."
+                    },
+                    "secondLi": {
+                        "title": "Dificultad media",
+                        "text": "Con la dificultad media lo que obtendrá es una contraseña que contiene letras mayúsculas y minúsculas, y algunos números y simbolos."
+                    },
+                    "thirdLi": {
+                        "title": "Dificultad difícil",
+                        "text": "La dificultad difícil es lo mismo que la media pero aumenta el número de números y simbolos."
+                    }
+                }
+            },
+            "fourthH2": {
+                "title": "Datos",
+                "ul": {
+                    "title": "Hay tres campos iguales que son los denominados datos y tienen dos valores cada uno:",
+                    "firstLi": {
+                        "title": "Nombre del dato",
+                        "firstLine": "En este campo tendrá que indicar el nombre del dato.",
+                        "secondLine": "Dicho nombre será utilizado como pista para volver a generar la misma contraseña."
+                    },
+                    "secondLi": {
+                        "title": "Valor del dato",
+                        "text": "Será la respuesta que se le dará a la pregunta o pista a la que hace referencia el nombre del dato."
+                    }
+                }
+            }
         }
     }
 }

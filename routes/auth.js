@@ -6,6 +6,7 @@ const {check, body} = require('express-validator');
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 const authController = require('../controllers/auth');
+const isAuth = require('../middleware/is-auth');
 const isNotAuth = require('../middleware/is-not-auth');
 const User = require('../models/user');
 
@@ -83,7 +84,7 @@ router.post(
     isNotAuth,
     authController.postSignup
 );
-router.get('/confirm/:token', isNotAuth, authController.getConfirm);
+router.get('/confirm/:token', authController.getConfirm);
 router.get('/reset-password', isNotAuth, authController.getResetPassword);
 router.post(
     '/reset-password', 
@@ -128,6 +129,6 @@ router.post(
     isNotAuth,
     authController.postNewPassword
 );
-router.post('/logout', isNotAuth, authController.postLogout);
+router.post('/logout', isAuth, authController.postLogout);
 
 module.exports = router;

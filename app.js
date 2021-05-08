@@ -1,5 +1,6 @@
 // NODE VANILLA PACKAGES DECLARATIONS
 const path = require('path');
+const fs = require('fs');
 
 // NPM PACKAGES DECLARATIONS
 const express = require('express');
@@ -14,7 +15,7 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
-// const morgan = require('morgan');
+const morgan = require('morgan');
 
 // CONTROLLERS, MODELS, MIDDLEWARES DECLARATIONS
 const User = require('./models/user');
@@ -64,6 +65,7 @@ app.use(express.urlencoded({
 
 // PUBLIC FOLDERS
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // LANGUAGE
 app.use(i18nextMiddleware.handle(i18next));
@@ -106,18 +108,18 @@ app.use(async (req, res, next) => {
     res.locals.csrfToken = req.csrfToken();
     return next();
 });
-// const accessLogStream = fs.createWriteStream(
-//     path.join(__dirname, 'access.log'),
-//     {
-//         flags: 'a'
-//     }
-// );
-// app.use(morgan(
-//     'combined',
-//     {
-//         stream: accessLogStream
-//     }
-// ));
+const accessLogStream = fs.createWriteStream(
+    path.join(__dirname, 'access.log'),
+    {
+        flags: 'a'
+    }
+);
+app.use(morgan(
+    'combined',
+    {
+        stream: accessLogStream
+    }
+));
 
 // ROUTES
 app.use(menusRoutes);
