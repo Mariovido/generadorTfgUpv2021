@@ -14,5 +14,6 @@ const router = express.Router();
 // ROUTES ..
 router.get('/', isNotAuth, menusController.getIndex);
 router.get('/menu', isAuth, menusController.getMenu);
+router.get('/guide', isAuth, menusController.getGuide);
 
 module.exports = router;

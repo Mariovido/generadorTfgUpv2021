@@ -7,6 +7,8 @@ block content
     main
         include ../layouts/message-popup.pug 
         div.centered
+            h1 #{generatorNames.text.h1}
+                a(href="/guide") #{generatorNames.text.a}
             form.generator-form(action="/generator", method="POST")
                 div.generator-form__wrapper
                     div.generator-form-input__wrapper

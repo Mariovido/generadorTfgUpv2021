@@ -1,0 +1,39 @@
+extends ../layouts/main-layout.pug
+
+block styles 
+
+block content 
+    main
+        include ../layouts/message-popup.pug  
+        div.centered
+            h1 #{guideNames.text.h1.title}
+                p.text #{guideNames.text.h1.text}
+            h2 #{guideNames.text.firstH2.title}
+                p.text #{guideNames.text.firstH2.firstLine}
+                p.text #{guideNames.text.firstH2.secondLine}
+                img.guide-img(src="/images/name-pass-table-" + guideNames.text.img + ".PNG")
+            h2 #{guideNames.text.secondH2.title}
+                p.text #{guideNames.text.secondH2.text}
+                img.guide-img(src="/images/length-table-" + guideNames.text.img + ".PNG") 
+            h2 #{guideNames.text.thirdH2.title}
+                ul.ul-text #{guideNames.text.thirdH2.ul.title}
+                    li.li-text #{guideNames.text.thirdH2.ul.firstLi.title}
+                        p.text #{guideNames.text.thirdH2.ul.firstLi.text}
+                    li.li-text #{guideNames.text.thirdH2.ul.secondLi.title}
+                        p.text #{guideNames.text.thirdH2.ul.secondLi.text}
+                    li.li-text #{guideNames.text.thirdH2.ul.thirdLi.title}
+                        p.text #{guideNames.text.thirdH2.ul.thirdLi.text}
+                img.guide-img(src="/images/difficulty-table-" + guideNames.text.img + ".PNG")
+            h2 #{guideNames.text.fourthH2.title}
+                ul.ul-text #{guideNames.text.fourthH2.ul.title}
+                    li.li-text #{guideNames.text.fourthH2.ul.firstLi.title} 
+                        p.text #{guideNames.text.fourthH2.ul.firstLi.firstLine}
+                        p.text #{guideNames.text.fourthH2.ul.firstLi.secondLine} 
+                    li.li-text #{guideNames.text.fourthH2.ul.secondLi.title}
+                        p.text #{guideNames.text.fourthH2.ul.secondLi.text}
+                img.guide-img(src="/images/data-table-" + guideNames.text.img + ".PNG")
+            form(action="/generator", method="GET") 
+                button.btn.index-button(type="submit") #{guideNames.form.generator}
+            form(action="/storage", method="GET") 
+                button.btn.index-button(type="submit") #{guideNames.form.saved}
+block scripts 

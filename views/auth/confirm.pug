@@ -11,6 +11,6 @@ block content
             p #{confirmNames.text.firstLine.first}#{email}#{confirmNames.text.firstLine.second}
             p #{confirmNames.text.secondLine}
             p #{confirmNames.text.thirdLine} #{emailSender}
-            button.btn(action="/", method="GET")
-                button.btn(type="submit") #{confirmNames.form.backIndex}
+            form(action="/menu", method="GET")
+                button.btn(type="submit") #{confirmNames.form.backMenu}
 block scripts 

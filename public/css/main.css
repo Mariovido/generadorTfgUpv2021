@@ -256,6 +256,11 @@ form {
     color: white;
 }
 
+.guide-img {
+    max-width: 90%;
+    margin: auto;
+}
+
 @media (min-width: 800px) {
     .main-header__nav {
       display: flex;

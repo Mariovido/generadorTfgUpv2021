@@ -3,6 +3,7 @@
         "auth": {
             "names": {
                 "menu": "Menu",
+                "guide": "Guide",
                 "generator": "Password generator",
                 "saved": "Saved passwords",
                 "account": "My account",
@@ -38,7 +39,8 @@
         },
         "menusTitles": {
             "index": "Home",
-            "menu": "Menu"
+            "menu": "Menu",
+            "guide": "Guide"
         },
         "generatorTitle": "Generator",
         "savedTitle": "Passwords",
@@ -156,7 +158,7 @@
     },
     "confirmView": {
         "form": {
-            "backIndex": "Go back to index"
+            "backMenu": "Go back to menu"
         },
         "text": {
             "firstLine":  {
@@ -361,6 +363,10 @@
             "dataName": "Enter a data name that only contains numbers and letters and is 4 to 30 characters long",
             "dataValue": "Enter a data value that only contains numbers and letters and is 4 to 30 characters long",
             "dataEmpty": "You must enter the data in order"
+        },
+        "text": {
+            "h1": "If you don't know how to use it press ",
+            "a": "here"
         }
     },
     "showPasswordView": {
@@ -418,6 +424,61 @@
         "validationErrors": {
             "dataValue": "Enter a data value that only contains numbers and letters and is 4 to 30 characters long",
             "dataNotMatch": "The entered value is incorrect"
+        }
+    },
+    "guideView": {
+        "form": {
+            "generator": "Generate password",
+            "saved": "Saved passwords"
+        },
+        "text": {
+            "img": "en",
+            "h1": {
+                "title": "How to generate a password",
+                "text": "The password generation has 4 fields:"
+            },
+            "firstH2": {
+                "title": "Password name",
+                "firstLine": "In this field you will have to put the title of your password.",
+                "secondLine": "Note that two different passwords cannot have the same name."
+            },
+            "secondH2": {
+                "title": "Password length",
+                "text": "In this field you will have to indicate the length of the password."
+            },
+            "thirdH2": {
+                "title": "Password difficulty",
+                "ul": {
+                    "title": "Here you will have to choose between 3 options:",
+                    "firstLi": {
+                        "title": "Easy difficulty",
+                        "text": "This difficulty will cause the password to contain only uppercase and lowercase letters."
+                    },
+                    "secondLi": {
+                        "title": "Medium difficulty",
+                        "text": "With medium difficulty, what you will get is a password that contains uppercase and lowercase letters, and some numbers and symbols."
+                    },
+                    "thirdLi": {
+                        "title": "Difficult hard",
+                        "text": "Hard difficulty is the same as medium but increases the number of numbers and symbols."
+                    }
+                }
+            },
+            "fourthH2": {
+                "title": "Data",
+                "ul": {
+                    "title": "There are three equal fields that are called data and have two values each:",
+                    "firstLi": {
+                        "title": "Data name",
+                        "firstLine": "In this field you will have to indicate the name of the data.",
+                        "secondLine": "This name will be used as a clue to generate the same password again."
+                    },
+                    "secondLi": {
+                        "title": "Data value",
+                        "text": "It will be the answer that will be given to the question or clue to which the data name refers."
+                    }
+                }
+            }
         }
     }
 }
