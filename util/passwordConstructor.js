@@ -39,7 +39,7 @@ module.exports = async (hashedData, data, length, difficulty, next) => {
             if (difficulty === 'medium') { 
                 if (!regexHashSymbols.test(character)) {
                     if (mixPassword.length < lengthBy2 / 2) {
-                        if (numberOfSymbols < maxNumbersMedium / 2 && (mixPassword.length % 2) != 0) {
+                        if (numberOfNumbers < maxNumbersMedium / 2 && (mixPassword.length % 2) != 0) {
                             character = trasnformToNumber(character);
                         }
                     }
@@ -54,7 +54,7 @@ module.exports = async (hashedData, data, length, difficulty, next) => {
                         }
                     }
                     if (mixPassword.length >= 3 * lengthBy2 / 2) {
-                        if (numberOfSymbols < maxNumbersMedium && (mixPassword.length % 2) == 0) {
+                        if (numberOfNumbers < maxNumbersMedium && (mixPassword.length % 2) == 0) {
                             character = trasnformToNumber(character);
                         }
                     }
@@ -73,7 +73,7 @@ module.exports = async (hashedData, data, length, difficulty, next) => {
             if (difficulty === 'hard') {
                 if (!regexHashSymbols.test(character)) {
                     if (mixPassword.length < lengthBy2 / 2) {
-                        if (numberOfSymbols < maxNumbersHard / 2 && (mixPassword.length % 2) != 0) {
+                        if (numberOfNumbers < maxNumbersHard / 2 && (mixPassword.length % 2) != 0) {
                             character = trasnformToNumber(character);
                         }
                     }
@@ -88,7 +88,7 @@ module.exports = async (hashedData, data, length, difficulty, next) => {
                         }
                     }
                     if (mixPassword.length >= 3 * lengthBy2 / 2) {
-                        if (numberOfSymbols < maxNumbersHard && (mixPassword.length % 2) == 0) {
+                        if (numberOfNumbers < maxNumbersHard && (mixPassword.length % 2) == 0) {
                             character = trasnformToNumber(character);
                         }
                     }

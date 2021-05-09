@@ -466,8 +466,11 @@
             },
             "fourthH2": {
                 "title": "Data",
+                "firstLine": "There are three equal fields that are called data.",
+                "secondLine": "These data will be used to later recreate the password.",
+                "thirdLine": "You will have to fill in at least one of them to generate a password.",
                 "ul": {
-                    "title": "There are three equal fields that are called data and have two values each:",
+                    "title": "Each of the data has two values:",
                     "firstLi": {
                         "title": "Data name",
                         "firstLine": "In this field you will have to indicate the name of the data.",
