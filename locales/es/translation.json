@@ -466,8 +466,11 @@
             },
             "fourthH2": {
                 "title": "Datos",
+                "firstLine": "Hay tres campos iguales que son los denominados datos.",
+                "secondLine": "Estos datos serán los utilizados para más tarde volver a recrear la contraseña.",
+                "thirdLine": "Tendrá que rellenar al menos uno de ellos para generar una contraseña.",
                 "ul": {
-                    "title": "Hay tres campos iguales que son los denominados datos y tienen dos valores cada uno:",
+                    "title": "Cada uno de los datos tiene dos valores:",
                     "firstLi": {
                         "title": "Nombre del dato",
                         "firstLine": "En este campo tendrá que indicar el nombre del dato.",
