@@ -34,10 +34,10 @@ module.exports = async (hashedData, data, length, difficulty, next) => {
                 }
             }
 
-            const maxNumbersMedium = length / 4;
-            const maxSymbolsMedium = length / 8;
+            const maxNumbersMedium = Math.ceil(length / 4);
+            const maxSymbolsMedium = Math.ceil(length / 8);
             if (difficulty === 'medium') { 
-                if (!regexHashSymbols.test(character)) {
+                if (!regexHashSymbols.test(character) && !regexNumbers.test(character)) {
                     if (mixPassword.length < lengthBy2 / 2) {
                         if (numberOfNumbers < maxNumbersMedium / 2 && (mixPassword.length % 2) != 0) {
                             character = trasnformToNumber(character);
@@ -71,7 +71,7 @@ module.exports = async (hashedData, data, length, difficulty, next) => {
             const maxNumbersHard = length / 4;
             const maxSymbolsHard = length / 4;
             if (difficulty === 'hard') {
-                if (!regexHashSymbols.test(character)) {
+                if (!regexHashSymbols.test(character) && !regexNumbers.test(character)) {
                     if (mixPassword.length < lengthBy2 / 2) {
                         if (numberOfNumbers < maxNumbersHard / 2 && (mixPassword.length % 2) != 0) {
                             character = trasnformToNumber(character);
