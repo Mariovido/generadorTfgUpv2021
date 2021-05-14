@@ -30,7 +30,7 @@
     display: block;
     width: 25rem;
     min-width: 14rem;
-    height: 13rem;
+    height: 18rem;
     padding: 20px 20px;
 }
 
@@ -50,4 +50,5 @@
     color: #009159;
     font-weight: bold;
     height: 2.5rem;
+    margin-top: 0.5rem;
 }

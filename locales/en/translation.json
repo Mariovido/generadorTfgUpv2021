@@ -228,7 +228,7 @@
             "firstH1": {
                 "title": "What is a strong password?",
                 "firstLine": "A strong password is one that is composed of a set of uppercase and lowercase characters, symbols and numbers, with a long length.",
-                "secondLine": "Currently, the recommended length is 12 characters, as many websites, such as Google or Amazon, claim that 8 characters with current technology can be guessed in a relatively short period of time."
+                "secondLine": "Currently, the recommended length is 12 characters, as many websites, such as Google or Amazon, claim that 8-character passwords with current technology can be guessed in a relatively short period of time."
             },
             "secondH1": {
                 "title": "Why should you have one?",
@@ -236,7 +236,7 @@
                 "secondLine": "In addition, intrusion or theft of digital identity will be avoided, 'spam' or other problems of access to data by third parties will be avoided."
             },
             "thirdH1": {
-                "title": "Examples of insecure passwords",
+                "title": "Examples of weak passwords",
                 "ul": {
                     "title": "Some typical and easy-to-guess passwords can be the following:",
                     "li": {
@@ -249,9 +249,9 @@
             },
             "fourthH1": {
                 "title": "Why use this application?",
-                "firstLine": "This application is specialized in generating and storing strong passwords, although you can also create less secure passwords.",
-                "secondLine": "Generated passwords are created from certain data that you enter manually and can only be regenerated if said data is entered correctly.",
-                "thirdLine": "For our part, in our database we will not save any password, making it even more difficult for anyone except you to generate or obtain it."
+                "firstLine": "This application is specialized in generating and storing strong passwords.",
+                "secondLine": "The generated passwords are created from certain data that you enter manually and can only be regenerated if said data is entered correctly.",
+                "thirdLine": "For our part, our database will not save any password, making it even more difficult for anyone except you to generate or obtain it."
             }
         }
     },
@@ -264,7 +264,7 @@
             "firstH1": {
                 "title": "What is a strong password?",
                 "firstLine": "A strong password is one that is composed of a set of uppercase and lowercase characters, symbols and numbers, with a long length.",
-                "secondLine": "Currently, the recommended length is 12 characters, as many websites, such as Google or Amazon, claim that 8 characters with current technology can be guessed in a relatively short period of time."
+                "secondLine": "Currently, the recommended length is 12 characters, as many websites, such as Google or Amazon, claim that 8-character passwords with current technology can be guessed in a relatively short period of time."
             },
             "secondH1": {
                 "title": "Why should you have one?",
@@ -272,7 +272,7 @@
                 "secondLine": "In addition, intrusion or theft of digital identity will be avoided, 'spam' or other problems of access to data by third parties will be avoided."
             },
             "thirdH1": {
-                "title": "Examples of insecure passwords",
+                "title": "Examples of weak passwords",
                 "ul": {
                     "title": "Some typical and easy-to-guess passwords can be the following:",
                     "li": {
@@ -285,9 +285,9 @@
             },
             "fourthH1": {
                 "title": "Why use this application?",
-                "firstLine": "This application is specialized in generating and storing strong passwords, although you can also create less secure passwords.",
-                "secondLine": "Generated passwords are created from certain data that you enter manually and can only be regenerated if said data is entered correctly.",
-                "thirdLine": "For our part, in our database we will not save any password, making it even more difficult for anyone except you to generate or obtain it."
+                "firstLine": "This application is specialized in generating and storing strong passwords.",
+                "secondLine": "The generated passwords are created from certain data that you enter manually and can only be regenerated if said data is entered correctly.",
+                "thirdLine": "For our part, our database will not save any password, making it even more difficult for anyone except you to generate or obtain it."
             }
         }
     },
@@ -340,16 +340,16 @@
                 "difficultyHard": "Strong password"
             },
             "data1": {
-                "data1Name": "Data name 1",
-                "data1Value": "Data value 1"
+                "data1Name": "Hint 1",
+                "data1Value": "Response 1"
             },
             "data2": {
-                "data2Name": "Data name 2",
-                "data2Value": "Data value 2"
+                "data2Name": "Hint 2",
+                "data2Value": "Response 2"
             },
             "data3": {
-                "data3Name": "Data name 3",
-                "data3Value": "Data value 3"
+                "data3Name": "Hint 3",
+                "data3Value": "Response 3"
             },
             "generator": "Generate password"
         },
@@ -360,9 +360,9 @@
             "length": "Enter a correct length",
             "lengthRange": "Length must be between 8 and 32",
             "difficulty": "Enter a correct difficulty",
-            "dataName": "Enter a data name that only contains numbers and letters and is 4 to 30 characters long",
-            "dataValue": "Enter a data value that only contains numbers and letters and is 4 to 30 characters long",
-            "dataEmpty": "You must enter the data in order"
+            "dataName": "Enter a hint that only contains numbers and letters and is 4 to 30 characters long",
+            "dataValue": "Enter a response that only contains numbers and letters and is 4 to 30 characters long",
+            "dataEmpty": "You must enter the hints in order"
         },
         "text": {
             "h1": "If you don't know how to use it press ",
@@ -406,24 +406,24 @@
                 "difficultyHard": "Strong password"
             },
             "data1": {
-                "data1Name": "Data name 1",
-                "data1Value": "Data value 1"
+                "data1Name": "Hint 1",
+                "data1Value": "Response 1"
             },
             "data2": {
-                "data2Name": "Data name 2",
-                "data2Value": "Data value 2"
+                "data2Name": "Hint 2",
+                "data2Value": "Response 2"
             },
             "data3": {
-                "data3Name": "Data name 3",
-                "data3Value": "Data value 3"
+                "data3Name": "Hint 3",
+                "data3Value": "Response 3"
             },
             "recreator": "Recreate password",
             "back": "Back"
         },
         "noData": "No data found",
         "validationErrors": {
-            "dataValue": "Enter a data value that only contains numbers and letters and is 4 to 30 characters long",
-            "dataNotMatch": "The entered value is incorrect"
+            "dataValue": "Enter a hint that only contains numbers and letters and is 4 to 30 characters long",
+            "dataNotMatch": "The entered response is incorrect"
         }
     },
     "guideView": {
@@ -465,20 +465,20 @@
                 }
             },
             "fourthH2": {
-                "title": "Data",
-                "firstLine": "There are three equal fields that are called data.",
-                "secondLine": "These data will be used to later recreate the password.",
+                "title": "Hints",
+                "firstLine": "There are three equal fields that are called hints.",
+                "secondLine": "These hints will be used to later recreate the password.",
                 "thirdLine": "You will have to fill in at least one of them to generate a password.",
                 "ul": {
-                    "title": "Each of the data has two values:",
+                    "title": "Each of the hints has two values:",
                     "firstLi": {
-                        "title": "Data name",
-                        "firstLine": "In this field you will have to indicate the name of the data.",
+                        "title": "Hint",
+                        "firstLine": "In this field you will have to indicate the name of the hint.",
                         "secondLine": "This name will be used as a clue to generate the same password again."
                     },
                     "secondLi": {
-                        "title": "Data value",
-                        "text": "It will be the answer that will be given to the question or clue to which the data name refers."
+                        "title": "Response",
+                        "text": "It will be the answer that will be given to the question or clue to which the last value refers."
                     }
                 }
             }

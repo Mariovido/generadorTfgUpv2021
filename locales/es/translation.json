@@ -228,15 +228,15 @@
             "firstH1": {
                 "title": "¿Qué es una contraseña segura?",
                 "firstLine": "Una contraseña segura es la que está compuesta por un conjunto de carácteres mayúsculas, minúsculas, símbolos y números, con una longitud larga.",
-                "secondLine": "En la actualidad, la longitud recomendada es de 12 carácteres, ya que muchos sitios web, como Google o Amazon, afirman que las de 8 carácteres con la tecnología actual se pueden adivinar en un período de tiempo relativamente pequeño."
+                "secondLine": "En la actualidad, la longitud recomendada es de 12 caracteres, ya que muchos sitios web, como Google o Amazon, afirman que las contraseñas de 8 caracteres con la tecnología actual se pueden adivinar en un período de tiempo relativamente pequeño."
             },
             "secondH1": {
                 "title": "¿Por qué deberías tener una?",
                 "firstLine": "Tener una contraseña segura ayuda a proteger tu cuenta de ataques maliciosos.",
-                "secondLine": "Además, se evitara intrusismo o suplantación de identidad digital, se evitara 'spam' u otros problemas de acceso a los datos por parte de terceros."
+                "secondLine": "Además, se evitará intrusismo o suplantación de identidad digital, se evitara 'spam' u otros problemas de acceso a los datos por parte de terceros."
             },
             "thirdH1": {
-                "title": "Ejemplos de contraseñas inseguras",
+                "title": "Ejemplos de contraseñas no seguras",
                 "ul": {
                     "title": "Algunas contraseñas típicas y fáciles de adivinar pueden ser las siguientes:",
                     "li": {
@@ -249,9 +249,9 @@
             },
             "fourthH1": {
                 "title": "¿Por qué utilizar esta aplicación?",
-                "firstLine": "Esta aplicación está especializada en la generación y almacenamiento de contraseñas seguras, aunque también podrá crearlas menos seguras.",
-                "secondLine": "Las contraseñas generadas se crean a partir de ciertos datos que usted introduzca manualmente y solo podrán volverse a generar si se introducen dichos datos correctamente.",
-                "thirdLine": "Por nuestra parte, en nuestra base de datos no guardaremos ninguna contraseña, haciendo aún más díficil que nadie salvo usted pueda generarla u obtenerla."
+                "firstLine": "Esta aplicación está especializada en la generación y almacenamiento de contraseñas seguras",
+                "secondLine": "Las contraseñas generadas se crean a partir de ciertos datos que tu introduzcas manualmente y solo podrán volverse a generar si se introducen dichos datos correctamente.",
+                "thirdLine": "Por nuestra parte, nuestra base de datos no guardaremos ninguna contraseña, haciendo aún más díficil que nadie salvo excepto tu pueda generarla u obtenerla."
             }
         }
     },
@@ -264,15 +264,15 @@
             "firstH1": {
                 "title": "¿Qué es una contraseña segura?",
                 "firstLine": "Una contraseña segura es la que está compuesta por un conjunto de carácteres mayúsculas, minúsculas, símbolos y números, con una longitud larga.",
-                "secondLine": "En la actualidad, la longitud recomendada es de 12 carácteres, ya que muchos sitios web, como Google o Amazon, afirman que las de 8 carácteres con la tecnología actual se pueden adivinar en un período de tiempo relativamente pequeño."
+                "secondLine": "En la actualidad, la longitud recomendada es de 12 caracteres, ya que muchos sitios web, como Google o Amazon, afirman que las contraseñas de 8 caracteres con la tecnología actual se pueden adivinar en un período de tiempo relativamente pequeño."
             },
             "secondH1": {
                 "title": "¿Por qué deberías tener una?",
                 "firstLine": "Tener una contraseña segura ayuda a proteger tu cuenta de ataques maliciosos.",
-                "secondLine": "Además, se evitara intrusismo o suplantación de identidad digital, se evitara 'spam' u otros problemas de acceso a los datos por parte de terceros."
+                "secondLine": "Además, se evitará intrusismo o suplantación de identidad digital, se evitara 'spam' u otros problemas de acceso a los datos por parte de terceros."
             },
             "thirdH1": {
-                "title": "Ejemplos de contraseñas inseguras",
+                "title": "Ejemplos de contraseñas no seguras",
                 "ul": {
                     "title": "Algunas contraseñas típicas y fáciles de adivinar pueden ser las siguientes:",
                     "li": {
@@ -285,9 +285,9 @@
             },
             "fourthH1": {
                 "title": "¿Por qué utilizar esta aplicación?",
-                "firstLine": "Esta aplicación está especializada en la generación y almacenamiento de contraseñas seguras, aunque también podrá crearlas menos seguras.",
-                "secondLine": "Las contraseñas generadas se crean a partir de ciertos datos que usted introduzca manualmente y solo podrán volverse a generar si se introducen dichos datos correctamente.",
-                "thirdLine": "Por nuestra parte, en nuestra base de datos no guardaremos ninguna contraseña, haciendo aún más díficil que nadie salvo usted pueda generarla u obtenerla."
+                "firstLine": "Esta aplicación está especializada en la generación y almacenamiento de contraseñas seguras.",
+                "secondLine": "Las contraseñas generadas se crean a partir de ciertos datos que tu introduzcas manualmente y solo podrán volverse a generar si se introducen dichos datos correctamente.",
+                "thirdLine": "Por nuestra parte, nuestra base de datos no guardaremos ninguna contraseña, haciendo aún más díficil que nadie salvo excepto tu pueda generarla u obtenerla."
             }
         }
     },
@@ -340,16 +340,16 @@
                 "difficultyHard": "Contraseña fuerte"
             },
             "data1": {
-                "data1Name": "Nombre dato 1",
-                "data1Value": "Valor dato 1"
+                "data1Name": "Pista 1",
+                "data1Value": "Respuesta 1"
             },
             "data2": {
-                "data2Name": "Nombre dato 2",
-                "data2Value": "Valor dato 2"
+                "data2Name": "Pista 2",
+                "data2Value": "Respuesta 2"
             },
             "data3": {
-                "data3Name": "Nombre dato 3",
-                "data3Value": "Valor dato 3"
+                "data3Name": "Pista 3",
+                "data3Value": "Respuesta 3"
             },
             "generator": "Generar contraseña"
         },
@@ -360,9 +360,9 @@
             "length": "Introduzca una longitud correcta",
             "lengthRange": "La longitud tiene que estar entre 8 y 32",
             "difficulty": "Introduzca una dificultad adecuada",
-            "dataName": "Introduzca un nombre de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
-            "dataValue": "Introduzca un valor de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
-            "dataEmpty": "Debe introducir los datos en orden"
+            "dataName": "Introduzca una pista que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "dataValue": "Introduzca una respuesta que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "dataEmpty": "Debe introducir las pistas en orden"
         },
         "text": {
             "h1": "Si no sabe cómo utilizarlo pulse ",
@@ -381,7 +381,7 @@
         },
         "text": {
             "firstLine": "Recuerde que solo podrá ver la contraseña en este momento.",
-            "secondLine": "Si quisiera volverla a ver, tendría que introducir los datos de nuevo."
+            "secondLine": "Si quisieras volverla a ver, tendrías que introducir los datos de nuevo."
         }
     },
     "storageView": {
@@ -406,24 +406,24 @@
                 "difficultyHard": "Contraseña fuerte"
             },
             "data1": {
-                "data1Name": "Nombre dato 1",
-                "data1Value": "Valor dato 1"
+                "data1Name": "Pista 1",
+                "data1Value": "Respuesta 1"
             },
             "data2": {
-                "data2Name": "Nombre dato 2",
-                "data2Value": "Valor dato 2"
+                "data2Name": "Pista 2",
+                "data2Value": "Respuesta 2"
             },
             "data3": {
-                "data3Name": "Nombre dato 3",
-                "data3Value": "Valor dato 3"
+                "data3Name": "Pista 3",
+                "data3Value": "Respuesta 3"
             },
             "recreator": "Recrear contraseña",
             "back": "Volver"
         },
         "noData": "No se ha encontrado ningún dato",
         "validationErrors": {
-            "dataValue": "Introduzca un valor de dato que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
-            "dataNotMatch": "El valor introducido es incorrecto"
+            "dataValue": "Introduzca una pista que solo contenga números y letras y tenga una longitud de 4 a 30 carácteres",
+            "dataNotMatch": "La respuesta introducida es incorrecto"
         }
     },
     "guideView": {
@@ -465,20 +465,20 @@
                 }
             },
             "fourthH2": {
-                "title": "Datos",
-                "firstLine": "Hay tres campos iguales que son los denominados datos.",
-                "secondLine": "Estos datos serán los utilizados para más tarde volver a recrear la contraseña.",
-                "thirdLine": "Tendrá que rellenar al menos uno de ellos para generar una contraseña.",
+                "title": "Pistas",
+                "firstLine": "Hay tres campos iguales que son las denominadas pistas.",
+                "secondLine": "Estas pistas serán las utilizadas para más tarde volver a recrear la contraseña.",
+                "thirdLine": "Tendrá que rellenar al menos una de ellas para generar una contraseña.",
                 "ul": {
-                    "title": "Cada uno de los datos tiene dos valores:",
+                    "title": "Cada una de las pistas tiene dos valores:",
                     "firstLi": {
-                        "title": "Nombre del dato",
-                        "firstLine": "En este campo tendrá que indicar el nombre del dato.",
-                        "secondLine": "Dicho nombre será utilizado como pista para volver a generar la misma contraseña."
+                        "title": "Pista",
+                        "firstLine": "En este campo tendrá que indicar el nombre de la pista.",
+                        "secondLine": "Dicho nombre será utilizado como ayuda para volver a generar la misma contraseña."
                     },
                     "secondLi": {
-                        "title": "Valor del dato",
-                        "text": "Será la respuesta que se le dará a la pregunta o pista a la que hace referencia el nombre del dato."
+                        "title": "Respuesta",
+                        "text": "Será la respuesta que se le dará a la pregunta o pista a la que hace referencia el valor anterior."
                     }
                 }
             }
